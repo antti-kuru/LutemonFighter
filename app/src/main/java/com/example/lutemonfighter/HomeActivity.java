@@ -33,22 +33,29 @@ public class HomeActivity extends AppCompatActivity {
 
             case R.id.rbWhite:
                 color = "Valkoinen";
-                Lutemon lutemon = new White(color, lutemonName.getText().toString());
+                White white = new White(color, lutemonName.getText().toString());
+                Storage.getInstance().addLutemon(white);
                 break;
             case R.id.rbGreen:
 
-                break;
+
             case R.id.rbPink:
-                break;
+
+
 
             case R.id.rbOrange:
-                break;
+
+
 
             case R.id.rbBlack:
-                break;
 
         }
 
-        Storage.getInstance().addLutemon(lutemon);
     }
+
+
+
+
+
+
 }
