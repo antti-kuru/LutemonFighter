@@ -41,7 +41,6 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
             }
         });
 
-        Storage.getInstance().getMovingLutemons().clear();
 
 
     }

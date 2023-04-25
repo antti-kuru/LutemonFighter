@@ -17,6 +17,8 @@ public class Storage {
 
     private ArrayList<Lutemon> lutemonsInTrainingArea = new ArrayList<>();
 
+    private ArrayList<Lutemon> lutemonsInBattleField = new ArrayList<>();
+
     private static Storage lutemonStorage = null; // Initialization of singleton
 
     public static Storage getInstance() {
@@ -38,11 +40,17 @@ public class Storage {
 
     public void addMovingLutemon(Lutemon lutemon) {movingLutemons.add(lutemon);}
 
+    public void addLutemonToBattleField(Lutemon lutemon) {lutemonsInBattleField.add(lutemon);}
+
     public void addLutemonToTrainingArea(Lutemon lutemon) {lutemonsInTrainingArea.add(lutemon);}
 
 
     public ArrayList<Lutemon> getLutemonsInTrainingArea() {
         return lutemonsInTrainingArea;
+    }
+
+    public ArrayList<Lutemon> getLutemonsInBattleField() {
+        return lutemonsInBattleField;
     }
 
     public ArrayList<Lutemon> getLutemons() {
