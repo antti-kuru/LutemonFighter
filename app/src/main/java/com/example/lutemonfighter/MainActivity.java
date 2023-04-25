@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void switchToMoveLutemon(View view){
-        Intent intent = new Intent(this, MoveLutemonActivity.class);
+        Intent intent = new Intent(this, ListLutemonActivity.class);
         startActivity(intent);
 
     }

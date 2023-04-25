@@ -14,7 +14,7 @@ public class ListLutemonActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_lutemon);
+        setContentView(R.layout.activity_list_lutemons);
 
         lutemonStorage = Storage.getInstance();
         recyclerView = findViewById(R.id.rvLutemonList);
