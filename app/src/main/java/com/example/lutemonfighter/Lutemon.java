@@ -19,6 +19,10 @@ public class Lutemon {
 
     public Lutemon(){
 
+        experience = 0;
+        wins = 0;
+        fights = 0;
+        trainingSessions = 0;
     }
 
     public void defence(Lutemon lutemon){
