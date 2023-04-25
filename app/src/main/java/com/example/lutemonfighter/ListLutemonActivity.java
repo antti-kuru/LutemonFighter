@@ -31,8 +31,6 @@ public class ListLutemonActivity extends AppCompatActivity {
 
     public void moveLutemons(View view) {
 
-
-
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

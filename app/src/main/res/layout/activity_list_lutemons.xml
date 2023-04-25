@@ -46,6 +46,7 @@
             android:gravity="center"
             android:text="Kotiin" />
     </RadioGroup>
+
     <Button
         android:id="@+id/btMakeMove"
         android:layout_width="wrap_content"
@@ -53,7 +54,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/blue_rounded_buttons"
         android:gravity="center"
-        android:onClick="returnHome"
+        android:onClick="moveLutemons"
         android:text="Siirrä"
         android:textColor="@android:color/white"
         android:textSize="14sp"
