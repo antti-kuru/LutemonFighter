@@ -11,6 +11,12 @@ import java.util.ArrayList;
 public class Storage {
 
     protected ArrayList<Lutemon> lutemons = new ArrayList<>();
+
+    private ArrayList<Lutemon> movingLutemons = new ArrayList<>();
+
+
+    private ArrayList<Lutemon> lutemonsInTrainingArea = new ArrayList<>();
+
     private static Storage lutemonStorage = null; // Initialization of singleton
 
     public static Storage getInstance() {
@@ -22,8 +28,21 @@ public class Storage {
 
     // addLutemon
 
+    public ArrayList<Lutemon> getMovingLutemons() {
+        return movingLutemons;
+    }
+
     public void addLutemon(Lutemon lutemon){
         lutemons.add(lutemon);
+    }
+
+    public void addMovingLutemon(Lutemon lutemon) {movingLutemons.add(lutemon);}
+
+    public void addLutemonToTrainingArea(Lutemon lutemon) {lutemonsInTrainingArea.add(lutemon);}
+
+
+    public ArrayList<Lutemon> getLutemonsInTrainingArea() {
+        return lutemonsInTrainingArea;
     }
 
     public ArrayList<Lutemon> getLutemons() {

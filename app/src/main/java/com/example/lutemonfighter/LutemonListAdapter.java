@@ -2,6 +2,7 @@ package com.example.lutemonfighter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -28,10 +29,21 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull LutemonViewHolder holder, int position) {
-        holder.lutemonNameAndColor.setText(lutemons.get(position).getName() + " (" + lutemons.get(position).getColor() + ")");
-        if (holder.checkBox.isChecked()){
 
-        }
+        holder.lutemonNameAndColor.setText(lutemons.get(position).getName() + " (" + lutemons.get(position).getColor() + ")");
+        holder.checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int pos = holder.getAdapterPosition();
+                if (holder.checkBox.isChecked()){
+                    Storage.getInstance().addMovingLutemon(lutemons.get(pos));
+                }
+            }
+        });
+
+        Storage.getInstance().getMovingLutemons().clear();
+
+
     }
 
     @Override
