@@ -16,7 +16,6 @@ public class HomeActivity extends AppCompatActivity {
     private EditText lutemonName;
     private RadioGroup rg;
     private String color;
-    private Button button;
 
 
 
@@ -27,6 +26,7 @@ public class HomeActivity extends AppCompatActivity {
         context = this;
         lutemonName = findViewById(R.id.editTextLutemonName);
         rg = findViewById(R.id.radioGroup);
+
     }
 
 
