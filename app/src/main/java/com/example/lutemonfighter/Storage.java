@@ -29,6 +29,14 @@ public class Storage {
     // getLutemon
     // listLutemons
 
+    public void listLutemons(){
+        for(Lutemon l : lutemons){
+            System.out.println(l.getName() + " " + l.getColor() + " " + l.getAttack() + " " + l.getDefence()+ " " + l.getMaxHealth());
+        }
+
+
+    }
+
     public void saveLutemons(Context context){
         try {
             ObjectOutputStream lutemonWriter = new ObjectOutputStream(context.openFileOutput("lutemons.data", Context.MODE_PRIVATE));

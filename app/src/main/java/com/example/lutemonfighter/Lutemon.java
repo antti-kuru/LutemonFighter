@@ -17,6 +17,30 @@ public class Lutemon {
     protected int trainingSessions;
 
 
+    public String getName() {
+        return name;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public int getDefence() {
+        return defence;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+
     public Lutemon(){
 
         experience = 0;
