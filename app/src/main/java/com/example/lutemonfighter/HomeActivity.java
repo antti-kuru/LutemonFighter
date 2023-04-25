@@ -3,8 +3,10 @@ package com.example.lutemonfighter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
@@ -14,6 +16,7 @@ public class HomeActivity extends AppCompatActivity {
     private EditText lutemonName;
     private RadioGroup rg;
     private String color;
+    private Button button;
 
 
 
@@ -37,19 +40,30 @@ public class HomeActivity extends AppCompatActivity {
                 Storage.getInstance().addLutemon(white);
                 break;
             case R.id.rbGreen:
-
+                color = "Vihreä";
+                Green green = new Green(color, lutemonName.getText().toString());
+                Storage.getInstance().addLutemon(green);
 
             case R.id.rbPink:
-
+                color = "Pinkki";
+                Pink pink = new Pink(color, lutemonName.getText().toString());
+                Storage.getInstance().addLutemon(pink);
 
 
             case R.id.rbOrange:
-
+                color = "Oranssi";
+                Orange orange = new Orange(color, lutemonName.getText().toString());
+                Storage.getInstance().addLutemon(orange);
 
 
             case R.id.rbBlack:
-
+                color = "Musta";
+                Black black = new Black(color, lutemonName.getText().toString());
+                Storage.getInstance().addLutemon(black);
         }
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
 
     }
 
