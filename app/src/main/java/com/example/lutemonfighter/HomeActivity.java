@@ -43,23 +43,25 @@ public class HomeActivity extends AppCompatActivity {
                 color = "Vihreä";
                 Green green = new Green(color, lutemonName.getText().toString());
                 Storage.getInstance().addLutemon(green);
+                break;
 
             case R.id.rbPink:
                 color = "Pinkki";
                 Pink pink = new Pink(color, lutemonName.getText().toString());
                 Storage.getInstance().addLutemon(pink);
-
+                break;
 
             case R.id.rbOrange:
                 color = "Oranssi";
                 Orange orange = new Orange(color, lutemonName.getText().toString());
                 Storage.getInstance().addLutemon(orange);
-
+                break;
 
             case R.id.rbBlack:
                 color = "Musta";
                 Black black = new Black(color, lutemonName.getText().toString());
                 Storage.getInstance().addLutemon(black);
+                break;
         }
 
         Intent intent = new Intent(this, MainActivity.class);
