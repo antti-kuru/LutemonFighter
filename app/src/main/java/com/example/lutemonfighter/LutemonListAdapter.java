@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> {
 
-    private Context context;
-    private ArrayList<Lutemon> lutemons = new ArrayList<>();
+    protected Context context;
+    protected ArrayList<Lutemon> lutemons = new ArrayList<>();
 
     public LutemonListAdapter(Context context, ArrayList<Lutemon> lutemons) {
         this.context = context;
@@ -29,6 +29,9 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull LutemonViewHolder holder, int position) {
         holder.lutemonNameAndColor.setText(lutemons.get(position).getName() + " (" + lutemons.get(position).getColor() + ")");
+        if (holder.checkBox.isChecked()){
+
+        }
     }
 
     @Override

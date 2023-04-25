@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class Storage {
 
-    private ArrayList<Lutemon> lutemons = new ArrayList<>();
+    protected ArrayList<Lutemon> lutemons = new ArrayList<>();
     private static Storage lutemonStorage = null; // Initialization of singleton
 
     public static Storage getInstance() {
