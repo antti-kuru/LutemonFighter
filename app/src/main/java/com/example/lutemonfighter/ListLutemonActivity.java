@@ -3,7 +3,6 @@ package com.example.lutemonfighter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -31,24 +30,6 @@ public class ListLutemonActivity extends AppCompatActivity {
 
 
     public void moveLutemons(View view) {
-
-        for (Lutemon l : Storage.getInstance().getMovingLutemons() ){
-            System.out.println(l.getName());
-        }
-
-        RadioGroup rg = findViewById(R.id.radioGroup2);
-        switch (rg.getCheckedRadioButtonId()) {
-
-            case R.id.rbTrainingArea:
-                for (Lutemon lutemon : Storage.getInstance().getMovingLutemons()) {
-                    Storage.getInstance().addLutemonToTrainingArea(lutemon);
-                }
-            case R.id.rbFightingArea:
-                for (Lutemon lutemon : Storage.getInstance().getMovingLutemons()) {
-                    BattleField.getInstance().addLutemon(lutemon);
-                }
-
-        }
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
