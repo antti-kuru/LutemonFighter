@@ -7,6 +7,7 @@ public class White extends Lutemon {
         attack = 5;
         defence = 4;
         maxHealth = 20;
+        health = 20;
         this.color = color;
         this.name = name;
 

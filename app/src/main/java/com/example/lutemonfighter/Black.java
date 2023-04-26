@@ -7,6 +7,7 @@ public class Black extends Lutemon  {
         attack = 9;
         defence = 0;
         maxHealth = 16;
+        health = 16;
         this.color = color;
         this.name = name;
     }

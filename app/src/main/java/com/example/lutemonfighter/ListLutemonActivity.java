@@ -33,8 +33,6 @@ public class ListLutemonActivity extends AppCompatActivity {
         rvBattleField.setLayoutManager(new LinearLayoutManager(this));
         rvBattleField.setAdapter(new LutemonListAdapter(getApplicationContext(), lutemonStorage.getLutemonsInBattleField()));
 
-
-
     }
 
 
@@ -50,12 +48,17 @@ public class ListLutemonActivity extends AppCompatActivity {
                 for (Lutemon l : Storage.getInstance().getMovingLutemons()){
                     Storage.getInstance().addLutemonToTrainingArea(l);
                 }
-
+                break;
             case R.id.rbFightingArea:
                 for (Lutemon l : Storage.getInstance().getMovingLutemons()){
                     Storage.getInstance().addLutemonToBattleField(l);
                 }
-
+                break;
+            case R.id.rbHome:
+                for (Lutemon l : Storage.getInstance().getMovingLutemons()){
+                    Storage.getInstance().addLutemon(l);
+                }
+                break;
         }
 
         Storage.getInstance().getMovingLutemons().clear();

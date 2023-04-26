@@ -6,6 +6,7 @@ public class Pink extends Lutemon {
         attack = 7;
         defence = 2;
         maxHealth = 18;
+        health = 18;
         this.color = color;
         this.name = name;
     }
