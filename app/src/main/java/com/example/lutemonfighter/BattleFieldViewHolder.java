@@ -7,14 +7,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class LutemonViewHolder extends RecyclerView.ViewHolder {
-
+public class BattleFieldViewHolder extends RecyclerView.ViewHolder {
     CheckBox checkBox;
-    TextView lutemonNameAndColor;
+    TextView lutemonNameAndColor3;
 
-    public LutemonViewHolder(@NonNull View itemView) {
+    public BattleFieldViewHolder(@NonNull View itemView) {
         super(itemView);
         checkBox = itemView.findViewById(R.id.cbChooseBattle);
-        lutemonNameAndColor = itemView.findViewById(R.id.txtNameAndColor);
+        lutemonNameAndColor3 = itemView.findViewById(R.id.txtNameAndColor);
     }
 }
+
