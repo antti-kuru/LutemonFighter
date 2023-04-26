@@ -14,6 +14,9 @@ public class ListLutemonActivity extends AppCompatActivity {
     private Storage lutemonStorage;
     private RecyclerView recyclerView;
 
+    private RecyclerView rvTrainingArea;
+    private RecyclerView rvBattleField;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,9 +24,16 @@ public class ListLutemonActivity extends AppCompatActivity {
 
         lutemonStorage = Storage.getInstance();
         recyclerView = findViewById(R.id.rvLutemonList);
-
+        rvTrainingArea = findViewById(R.id.rvLutemonTrainingArea);
+        rvBattleField = findViewById(R.id.rvLutemonBattleField);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new LutemonListAdapter(getApplicationContext(), lutemonStorage.getLutemons()));
+        rvTrainingArea.setLayoutManager(new LinearLayoutManager(this));
+        rvTrainingArea.setAdapter(new LutemonListAdapter(getApplicationContext(), lutemonStorage.getLutemonsInTrainingArea()));
+        rvBattleField.setLayoutManager(new LinearLayoutManager(this));
+        rvBattleField.setAdapter(new LutemonListAdapter(getApplicationContext(), lutemonStorage.getLutemonsInBattleField()));
+
+
 
     }
 
