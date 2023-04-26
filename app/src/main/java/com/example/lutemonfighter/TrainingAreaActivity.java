@@ -23,14 +23,14 @@ public class TrainingAreaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_training_area);
 
         lutemonStorage = Storage.getInstance().getLutemonsInTrainingArea();
-        recyclerView = findViewById(R.id.rvChooseTrainedLutemon);
+        recyclerView = findViewById(R.id.rvChooseTraining);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new TrainingListAdapter(getApplicationContext(), lutemonStorage));
 
-        tvFirst = findViewById(R.id.tvFirstEx);
-        tvSecond = findViewById(R.id.tvSecondEx);
-        tvThird = findViewById(R.id.tvThirdEx);
+        tvFirst = findViewById(R.id.tvFirstRound);
+        tvSecond = findViewById(R.id.tvSecondRound);
+        tvThird = findViewById(R.id.tvThirdRound);
         tvFourth = findViewById(R.id.tvFourthEx);
         tvFifth = findViewById(R.id.tvFifthEx);
         tvResult = findViewById(R.id.tvResult);
@@ -43,20 +43,19 @@ public class TrainingAreaActivity extends AppCompatActivity {
         for (Lutemon lutemon : Storage.getInstance().getMovingLutemons()){
             lutemon.setAttack(lutemon.getAttack()+2);
             lutemon.setExperience(lutemon.getExperience()+2);
+            tvFirst.setText(lutemon.getName() + " juoksee juoksumatolla!");
+
+
+            tvSecond.setText("Lutemon tekee punnerruksia");
+            tvThird.setText("Lutemon rutistaa vatsalihaksia");
+            tvFourth.setText("Lutemon vetää leukoja");
+            tvFifth.setText("Lutemon tekee kyykkyjä");
+            tvResult.setText("Lutemon suoritti treenin ja sai 2 kokemuspistettä!");
         }
 
 
         Storage.getInstance().getMovingLutemons().clear();
-
-
-        tvFirst.setText("Juoksee juoksumatolla!");
-        tvSecond.setText("Tekee punnerruksia");
-        tvThird.setText("Rutistaa vatsalihaksia");
-        tvFourth.setText("Vetää leukoja");
-        tvFifth.setText("Tekee kyykkyjä");
-        tvResult.setText("Lutemon suoritti treenin ja sai 2 kokemuspistettä!");
-
-        //Intent intent = new Intent(this, MainActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
