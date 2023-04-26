@@ -29,20 +29,16 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull LutemonViewHolder holder, int position) {
-
         holder.lutemonNameAndColor.setText(lutemons.get(position).getName() + " (" + lutemons.get(position).getColor() + ")");
         holder.checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int pos = holder.getAdapterPosition();
-                if (holder.checkBox.isChecked()){
+                if (holder.checkBox.isChecked()) {
                     Storage.getInstance().addMovingLutemon(lutemons.get(pos));
-                    lutemons.remove(pos);
                 }
             }
         });
-
-
 
     }
 
