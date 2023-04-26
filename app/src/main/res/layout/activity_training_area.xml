@@ -7,7 +7,7 @@
     tools:context=".TrainingAreaActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvChooseTrainedLutemon"
+        android:id="@+id/rvChooseTraining"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnTrainLutemon"
+        android:id="@+id/btnStartBattle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/blue_rounded_buttons"
@@ -25,35 +25,35 @@
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvChooseTrainedLutemon" />
+        app:layout_constraintTop_toBottomOf="@+id/rvBattle" />
 
     <TextView
-        android:id="@+id/tvFirstEx"
+        android:id="@+id/tvFirstRound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTrainLutemon" />
+        app:layout_constraintTop_toBottomOf="@+id/btnStartBattle" />
 
     <TextView
-        android:id="@+id/tvSecondEx"
+        android:id="@+id/tvSecondRound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFirstEx" />
+        app:layout_constraintTop_toBottomOf="@+id/tvFirstRound" />
 
     <TextView
-        android:id="@+id/tvThirdEx"
+        android:id="@+id/tvThirdRound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSecondEx" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSecondRound" />
 
     <TextView
         android:id="@+id/tvFourthEx"
@@ -63,7 +63,7 @@
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvThirdEx" />
+        app:layout_constraintTop_toBottomOf="@+id/tvThirdRound" />
 
     <TextView
         android:id="@+id/tvFifthEx"
