@@ -17,6 +17,14 @@ public class Lutemon {
     protected int trainingSessions;
 
 
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
     public String getName() {
         return name;
     }

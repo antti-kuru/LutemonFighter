@@ -32,8 +32,35 @@ public class TrainingListAdapter extends RecyclerView.Adapter<TrainingViewHolder
     public void onBindViewHolder(@NonNull TrainingViewHolder holder, int position) {
         holder.lutemonNameAndColor2.setText(lutemons.get(position).getName() + " (" + lutemons.get(position).getColor() + ")");
         System.out.println("Here");
-        holder.tvResult.setText(lutemons.get(position).getName());
-        holder.tvResult.setText(" suoritti treenin ja sai 2 kokemuspistettä!");
+       //holder.tvResult.setText(lutemons.get(position).getName());
+
+        holder.checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int pos = holder.getAdapterPosition();
+                if (holder.checkBox.isChecked()){
+                    Storage.getInstance().addMovingLutemon(lutemons.get(pos));
+                }
+            }
+
+        });
+
+        holder.btnTrainLutemon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                for (Lutemon lutemon : Storage.getInstance().getMovingLutemons()){
+                    TextView tv = new TextView(context);
+                    tv.setText(lutemon.getName() + " treenaa kovaa");
+                    tv.setText(lutemon.getName() + " vetää leukoja");
+                    holder.constraintLayout.addView(tv);
+                    notifyDataSetChanged();
+                    System.out.println("MOI");
+            }
+        });
+
+
+
+      //  holder.tvResult.setText(" suoritti treenin ja sai 2 kokemuspistettä!");
 
         //holder.btnTrainLutemon.setOnClickListener(view -> {
           //  holder.tvFirst.setText(lutemons.get(position).getName() + " juoksee juoksumatolla");
