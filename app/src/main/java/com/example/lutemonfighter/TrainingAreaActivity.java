@@ -39,6 +39,16 @@ public class TrainingAreaActivity extends AppCompatActivity {
     }
 
     public void letsTrain(View view) {
+
+        for (Lutemon lutemon : Storage.getInstance().getMovingLutemons()){
+            lutemon.setAttack(lutemon.getAttack()+2);
+            lutemon.setExperience(lutemon.getExperience()+2);
+        }
+
+
+        Storage.getInstance().getMovingLutemons().clear();
+
+
         tvFirst.setText("Juoksee juoksumatolla!");
         tvSecond.setText("Tekee punnerruksia");
         tvThird.setText("Rutistaa vatsalihaksia");

@@ -48,8 +48,6 @@ public class ListLutemonActivity extends AppCompatActivity {
 
         }
 
-
-
         Storage.getInstance().getMovingLutemons().clear();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
