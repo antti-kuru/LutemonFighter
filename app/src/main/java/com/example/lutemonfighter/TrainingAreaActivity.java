@@ -6,9 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import java.util.ArrayList;
+
 public class TrainingAreaActivity extends AppCompatActivity {
 
-    private Storage lutemonStorage;
+    private ArrayList<Lutemon> lutemonStorage;
     private RecyclerView recyclerView;
 
     @Override
@@ -16,10 +18,10 @@ public class TrainingAreaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training_area);
 
-        lutemonStorage = Storage.getInstance();
+        lutemonStorage = Storage.getInstance().getLutemonsInTrainingArea();
         recyclerView = findViewById(R.id.rvChooseTrainedLutemon);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new TrainingListAdapter(getApplicationContext(), lutemonStorage.getLutemons()));
+        recyclerView.setAdapter(new TrainingListAdapter(getApplicationContext(), lutemonStorage));
     }
 }
