@@ -75,6 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="90dp"
             android:background="@drawable/blue_rounded_buttons"
+            android:onClick="SwitchToViewStatistics"
             android:text="Tarkastele tilastoja"
             android:textColor="@android:color/white"
             android:textSize="14sp"
