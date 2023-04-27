@@ -28,9 +28,9 @@ public class TrainingAreaActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new TrainingListAdapter(getApplicationContext(), lutemonStorage));
 
-        tvFirst = findViewById(R.id.tvFirstRound);
-        tvSecond = findViewById(R.id.tvSecondRound);
-        tvThird = findViewById(R.id.tvThirdRound);
+        tvFirst = findViewById(R.id.tvFirstEx);
+        tvSecond = findViewById(R.id.tvSecondEx);
+        tvThird = findViewById(R.id.tvThirdEx);
         tvFourth = findViewById(R.id.tvFourthEx);
         tvFifth = findViewById(R.id.tvFifthEx);
         tvResult = findViewById(R.id.tvResult);
@@ -46,16 +46,16 @@ public class TrainingAreaActivity extends AppCompatActivity {
             tvFirst.setText(lutemon.getName() + " juoksee juoksumatolla!");
 
 
-            tvSecond.setText("Lutemon tekee punnerruksia");
-            tvThird.setText("Lutemon rutistaa vatsalihaksia");
-            tvFourth.setText("Lutemon vetää leukoja");
-            tvFifth.setText("Lutemon tekee kyykkyjä");
-            tvResult.setText("Lutemon suoritti treenin ja sai 2 kokemuspistettä!");
+            tvSecond.setText(lutemon.getName() + " tekee punnerruksia");
+            tvThird.setText(lutemon.getName() + " rutistaa vatsalihaksia");
+            tvFourth.setText(lutemon.getName() + " vetää leukoja");
+            tvFifth.setText(lutemon.getName() + " tekee kyykkyjä");
+            tvResult.setText(lutemon.getName() + " suoritti treenin ja sai 2 kokemuspistettä!");
         }
 
 
         Storage.getInstance().getMovingLutemons().clear();
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, MainActivity.class);
+        //startActivity(intent);
     }
 }
