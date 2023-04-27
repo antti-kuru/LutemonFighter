@@ -13,8 +13,8 @@ public class BattleFieldViewHolder extends RecyclerView.ViewHolder {
 
     public BattleFieldViewHolder(@NonNull View itemView) {
         super(itemView);
-        checkBox = itemView.findViewById(R.id.cbChooseBattle);
-        lutemonNameAndColor3 = itemView.findViewById(R.id.txtNameAndColor);
+        checkBox = itemView.findViewById(R.id.cbChooseLutemonToBattle);
+        lutemonNameAndColor3 = itemView.findViewById(R.id.txtLutemonAtBattlefield);
     }
 }
 

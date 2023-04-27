@@ -102,6 +102,13 @@ public class BattleFieldActivity extends AppCompatActivity {
         // Display the battle log to user
         tvBattleLog.setText(battleLog);
 
+        // Give both lutemons +1 battling sessions
+        attacker.setFights(attacker.getFights() + 1);
+        defender.setFights(defender.getFights() + 1);
+
+        // Give the winner a win
+        attacker.setWins(attacker.getWins() + 1);
+
         // Regenerate lutemons to max health
         attacker.setHealth(attacker.maxHealth);
         defender.setHealth(defender.maxHealth);

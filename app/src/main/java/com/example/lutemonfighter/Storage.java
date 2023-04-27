@@ -56,7 +56,7 @@ public class Storage {
     public ArrayList<Lutemon> getLutemons() {
         return lutemons;
     }
-// getLutemon
+    // getLutemon
     // listLutemons
 
     public void listLutemons(){

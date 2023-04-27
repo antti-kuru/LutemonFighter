@@ -14,7 +14,7 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
 
     public LutemonViewHolder(@NonNull View itemView) {
         super(itemView);
-        checkBox = itemView.findViewById(R.id.cbChooseBattle);
-        lutemonNameAndColor = itemView.findViewById(R.id.txtNameAndColor);
+        checkBox = itemView.findViewById(R.id.cbChooseLutemonToMove);
+        lutemonNameAndColor = itemView.findViewById(R.id.txtLutemonAtMoving);
     }
 }

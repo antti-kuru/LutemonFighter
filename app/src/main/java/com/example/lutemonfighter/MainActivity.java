@@ -18,28 +18,33 @@ public class MainActivity extends AppCompatActivity {
         context = this;
     }
 
-    public void switchToAddLutemon(View view){
+    public void switchToAddLutemon(View view) {
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
 
     }
-    public void switchToMoveLutemon(View view){
+
+    public void switchToMoveLutemon(View view) {
         Intent intent = new Intent(this, ListLutemonActivity.class);
         startActivity(intent);
 
     }
-    public void switchToTrainingArea(View view){
+
+    public void switchToTrainingArea(View view) {
         Intent intent = new Intent(this, TrainingAreaActivity.class);
         startActivity(intent);
 
     }
-    public void switchToBattleField(View view){
+
+    public void switchToBattleField(View view) {
         Intent intent = new Intent(this, BattleFieldActivity.class);
         startActivity(intent);
 
     }
 
-
-
+    public void SwitchToViewStatistics(View view) {
+        Intent intent = new Intent(this, StatisticsActivity.class);
+        startActivity(intent);
+    }
 
 }
