@@ -11,10 +11,9 @@
 
 
     <CheckBox
-        android:id="@+id/cbChoose"
+        android:id="@+id/cbChooseLutemonsToTrain"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckBox" />
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -23,13 +22,13 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtLutemonNameAndColor2"
+            android:id="@+id/txtLutemonAtTraining"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Name + Color"
             android:textColor="#00BFFF"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

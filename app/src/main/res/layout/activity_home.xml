@@ -19,31 +19,36 @@
             android:id="@+id/rbWhite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="valkoinen" />
+            android:text="Valkoinen"
+            android:textSize="16sp"/>
 
         <RadioButton
             android:id="@+id/rbGreen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vihreä" />
+            android:text="Vihreä"
+            android:textSize="16sp"/>
 
         <RadioButton
             android:id="@+id/rbPink"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pinkki" />
+            android:text="Pinkki"
+            android:textSize="16sp"/>
 
         <RadioButton
             android:id="@+id/rbOrange"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Oranssi" />
+            android:text="Oranssi"
+            android:textSize="16sp"/>
 
         <RadioButton
             android:id="@+id/rbBlack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Musta" />
+            android:text="Musta"
+            android:textSize="16sp"/>
     </RadioGroup>
 
     <EditText
@@ -53,6 +58,7 @@
         android:layout_marginTop="64dp"
         android:ems="10"
         android:hint="Lutemonin nimi"
+        android:gravity="center"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -66,6 +72,8 @@
         android:layout_marginTop="48dp"
         android:onClick="createLutemon"
         android:text="Lisää uusi Lutemon"
+        android:textColor="@android:color/white"
+        android:background="@drawable/blue_rounded_buttons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

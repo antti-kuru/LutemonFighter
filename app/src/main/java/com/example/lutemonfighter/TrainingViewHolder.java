@@ -1,7 +1,6 @@
 package com.example.lutemonfighter;
 
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
@@ -19,8 +18,8 @@ public class TrainingViewHolder extends RecyclerView.ViewHolder {
 
     public TrainingViewHolder(@NonNull View itemView) {
         super(itemView);
-        checkBox = itemView.findViewById(R.id.cbChoose);
-        lutemonNameAndColor2 = itemView.findViewById(R.id.txtLutemonNameAndColor2);
+        checkBox = itemView.findViewById(R.id.cbChooseLutemonsToTrain);
+        lutemonNameAndColor2 = itemView.findViewById(R.id.txtLutemonAtTraining);
         //constraintLayout = itemView.findViewById(R.id.constraintLayout);
     }
 }

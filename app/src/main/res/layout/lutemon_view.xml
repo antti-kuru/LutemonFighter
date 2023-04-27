@@ -6,14 +6,14 @@
     android:layout_marginLeft="25dp"
     android:layout_marginTop="3dp"
     android:layout_marginRight="25dp"
-    android:background="#00BFFF"
+    android:background="@android:color/white"
     android:orientation="horizontal">
 
 
     <CheckBox
-        android:id="@+id/cbChooseBattle"
+        android:id="@+id/cbChooseLutemonToMove"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -22,13 +22,13 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtNameAndColor"
+            android:id="@+id/txtLutemonAtMoving"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Name + color"
-            android:textColor="@android:color/white"
-            android:textSize="24sp" />
+            android:text="Name + Color"
+            android:textColor="#00BFFF"
+            android:textSize="18sp" />
 
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

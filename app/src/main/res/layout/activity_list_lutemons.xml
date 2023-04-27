@@ -1,119 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvLutemonList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLutemonHome">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <RadioGroup
-        android:id="@+id/radioGroup2"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvLutemonBattleField"
-        app:layout_constraintVertical_bias="0.021">
-
-        <RadioButton
-            android:id="@+id/rbTrainingArea"
-            android:layout_width="match_parent"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLutemonList"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Treenaamaan" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.46"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLutemonHome">
 
-        <RadioButton
-            android:id="@+id/rbFightingArea"
-            android:layout_width="match_parent"
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="135dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Taistelemaan" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.46"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvLutemonBattleField"
+            app:layout_constraintVertical_bias="0.021">
 
-        <RadioButton
-            android:id="@+id/rbHome"
-            android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/rbTrainingArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Treenaamaan" />
+
+            <RadioButton
+                android:id="@+id/rbFightingArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Taistelemaan" />
+
+            <RadioButton
+                android:id="@+id/rbHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Kotiin" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btMakeMove"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/blue_rounded_buttons"
             android:gravity="center"
-            android:text="Kotiin" />
-    </RadioGroup>
+            android:onClick="moveLutemons"
+            android:text="Siirrä"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
-    <Button
-        android:id="@+id/btMakeMove"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/blue_rounded_buttons"
-        android:gravity="center"
-        android:onClick="moveLutemons"
-        android:text="Siirrä"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLutemonBattleField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.46"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBattlefieldName" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvLutemonBattleField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBattlefieldName" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLutemonTrainingArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.46"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTrainingAreaName" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvLutemonTrainingArea"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTrainingAreaName" />
+        <TextView
+            android:id="@+id/tvLutemonHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text='Kotona olevat'
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.44"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvLutemonHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text='Kotona olevat'
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.435"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tvTrainingAreaName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Treenaamassa olevat"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.46"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvLutemonList" />
 
-    <TextView
-        android:id="@+id/tvTrainingAreaName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Treenaamassa olevat"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvLutemonList" />
+        <TextView
+            android:id="@+id/tvBattlefieldName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='Taistelukentällä olevat'
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.44"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvLutemonTrainingArea" />
 
-    <TextView
-        android:id="@+id/tvBattlefieldName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text='Taistelukentällä olevat'
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.415"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvLutemonTrainingArea" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
