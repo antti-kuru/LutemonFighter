@@ -37,7 +37,7 @@ public class StatisticsListAdapter extends RecyclerView.Adapter<StatisticsViewHo
         holder.lutemonLosses.setText("Häviöt: " + (lutemons.get(position).getFights() - lutemons.get(position).getWins()));
         holder.lutemonBattles.setText("Ottelut: " + lutemons.get(position).getFights());
         holder.lutemonTrainings.setText("Treenikerrat: " + lutemons.get(position).getTrainingSessions());
-        // holder.lutemonPicture.setImageResource(lutemons.get(position).getImage());
+        holder.lutemonPicture.setImageResource(lutemons.get(position).getImage());
     }
 
     @Override
