@@ -28,7 +28,7 @@ public class TrainingAreaActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new TrainingListAdapter(getApplicationContext(), lutemonStorage));
 
-        tvFirst = findViewById(R.id.tvFirstRound);
+        tvFirst = findViewById(R.id.tvBattleLog);
         tvSecond = findViewById(R.id.tvSecondRound);
         tvThird = findViewById(R.id.tvThirdRound);
         tvFourth = findViewById(R.id.tvFourthEx);
