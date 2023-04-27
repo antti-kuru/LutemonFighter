@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="25dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginRight="25dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="0dp"
     android:background="#00BFFF"
     android:orientation="horizontal">
 
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:text="Name + Color"
             android:textColor="@android:color/white"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/statsAttack"
@@ -38,7 +38,7 @@
             android:layout_marginTop="3dp"
             android:text="Hyökkäys"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="italic" />
 
         <TextView
@@ -48,7 +48,7 @@
             android:layout_marginTop="3dp"
             android:text="Puolustus"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="italic" />
 
         <TextView
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
             android:text="Elämäpisteet"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textColor="@android:color/white"
             android:textStyle="italic"/>
 
@@ -68,7 +68,7 @@
             android:layout_marginTop="3dp"
             android:text="Kokemuspisteet"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="italic" />
 
         <TextView
@@ -78,7 +78,7 @@
             android:layout_marginTop="3dp"
             android:text="Voitot"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="italic" />
 
         <TextView
@@ -88,7 +88,7 @@
             android:layout_marginTop="3dp"
             android:text="Häviöt"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="italic" />
 
         <TextView
@@ -98,7 +98,7 @@
             android:layout_marginTop="3dp"
             android:text="Ottelukerrat"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="italic" />
 
         <TextView
@@ -108,7 +108,7 @@
             android:layout_marginTop="3dp"
             android:text="Treenikerrat"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="italic" />
 
     </LinearLayout>
