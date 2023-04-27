@@ -28,7 +28,7 @@
         app:layout_constraintTop_toBottomOf="@+id/rvChooseTraining" />
 
     <TextView
-        android:id="@+id/tvBattleLog"
+        android:id="@+id/tvFirstEx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -38,22 +38,22 @@
         app:layout_constraintTop_toBottomOf="@+id/btnStartTraining" />
 
     <TextView
-        android:id="@+id/tvSecondRound"
+        android:id="@+id/tvSecondEx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBattleLog" />
+        app:layout_constraintTop_toBottomOf="@+id/tvFirstEx" />
 
     <TextView
-        android:id="@+id/tvThirdRound"
+        android:id="@+id/tvThirdEx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSecondRound" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSecondEx" />
 
     <TextView
         android:id="@+id/tvFourthEx"
@@ -63,7 +63,7 @@
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvThirdRound" />
+        app:layout_constraintTop_toBottomOf="@+id/tvThirdEx" />
 
     <TextView
         android:id="@+id/tvFifthEx"
