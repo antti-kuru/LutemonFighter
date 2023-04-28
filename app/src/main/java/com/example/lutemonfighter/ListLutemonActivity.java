@@ -46,21 +46,30 @@ public class ListLutemonActivity extends AppCompatActivity {
 
             case R.id.rbTrainingArea:
                 for (Lutemon l : Storage.getInstance().getMovingLutemons()){
+                    Storage.getInstance().getLutemonsInTrainingArea().remove(l);
                     Storage.getInstance().addLutemonToTrainingArea(l);
+                    Storage.getInstance().getLutemons().remove(l);
+                    Storage.getInstance().getLutemonsInBattleField().remove(l);
+
                 }
                 break;
             case R.id.rbFightingArea:
                 for (Lutemon l : Storage.getInstance().getMovingLutemons()){
+                    Storage.getInstance().getLutemonsInBattleField().remove(l);
                     Storage.getInstance().addLutemonToBattleField(l);
+                    Storage.getInstance().getLutemons().remove(l);
+                    Storage.getInstance().getLutemonsInTrainingArea().remove(l);
                 }
                 break;
             case R.id.rbHome:
                 for (Lutemon l : Storage.getInstance().getMovingLutemons()){
+                    Storage.getInstance().getLutemons().remove(l);
                     Storage.getInstance().addLutemon(l);
+                    Storage.getInstance().getLutemonsInTrainingArea().remove(l);
+                    Storage.getInstance().getLutemonsInBattleField().remove(l);
                 }
                 break;
         }
-
         Storage.getInstance().getMovingLutemons().clear();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
