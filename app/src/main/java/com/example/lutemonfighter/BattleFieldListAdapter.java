@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,12 +38,18 @@ public class BattleFieldListAdapter extends RecyclerView.Adapter<BattleFieldView
             public void onClick(View view) {
                 int pos = holder.getAdapterPosition();
                 if (holder.checkBox.isChecked()) {
-                    Storage.getInstance().addMovingLutemon(lutemons.get(pos));
+                    if (!Storage.getInstance().getMovingLutemons().contains(lutemons.get(pos))){
+                        Storage.getInstance().addMovingLutemon(lutemons.get(pos));
+                    }
+                } else {
+                    Storage.getInstance().getMovingLutemons().remove(lutemons.get(pos));
 
                 }
+                notifyDataSetChanged();
             }
 
         });
+
     }
     @Override
     public int getItemCount () {
