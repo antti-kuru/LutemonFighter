@@ -139,12 +139,14 @@ public class Lutemon implements Serializable {
         trainingSessions = 0;
     }
 
-    public void defence(Lutemon lutemon){
-
+    public int defence(Lutemon lutemon){
+        // In this defence method we calculate and return the damage done by the attacker
+        return (lutemon.attack() - defence);
     }
 
     public int attack(){
-       return attack;
+        // Here we just return the attack
+        return attack;
     }
 
     public int getNumberOfCreatedLutemons(){

@@ -12,8 +12,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class BattleFieldActivity extends AppCompatActivity {
+    Timer timer;
 
     private ArrayList<Lutemon> lutemonStorage;
     private RecyclerView recyclerView;
@@ -31,6 +34,8 @@ public class BattleFieldActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battle_field);
 
+        timer = new Timer();
+
         lutemonStorage = Storage.getInstance().getLutemonsInBattleField();
         recyclerView = findViewById(R.id.rvBattle);
 
@@ -43,6 +48,18 @@ public class BattleFieldActivity extends AppCompatActivity {
         tvBattleLog.setTextColor(Color.parseColor("#00BFFF"));
         tvBattleLog.setTextSize(14);
     }
+
+    public void returnHome() {
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(BattleFieldActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }, 8000);
+    }
+
 
     // For two lutemons to fight each other
     public void fight(View view) {
@@ -65,7 +82,7 @@ public class BattleFieldActivity extends AppCompatActivity {
         // Each iteration we check if the lutemon, that's going to take the next hit, has
         // enough health points left
         while (defender.getHealth() > 0) {
-            int damage = attacker.getAttack() - defender.getDefence();
+            int damage = defender.defence(attacker);
 
             // Display stats for the attacker
             battleLog += ("1: " + attacker.getName() + "(" + attacker.getColor() + ") att: " + attacker.getAttack() + "; def: " + attacker.getDefence() + "; exp: " + attacker.getExperience() + "; health: " + attacker.getHealth() + "/" + attacker.getMaxHealth() + "\n");
@@ -77,16 +94,16 @@ public class BattleFieldActivity extends AppCompatActivity {
             if ((int)(Math.random() * 10) + 1 > 8) {
                 battleLog += (attacker.getName() + "(" + attacker.getColor() + ") käyttää superiskun.\n");
                 // Leaving no chance for the defending lutemon to avoid incoming super attack
-                defender.setHealth(defender.health - (damage + 2));
+                defender.setHealth(defender.getHealth() - (damage + 2));
             }
             else {
                 battleLog += (attacker.getName() + "(" + attacker.getColor() + ") iskee puolustajaa.\n");
                 // Create a small probability for the lutemon to avoid incoming regural attack
-                if ((int)(Math.random() * 100) + 1 > 95) {
+                if ((int)(Math.random() * 10) + 1 > 9) {
                     battleLog += (defender.getName() + "(" + defender.getColor() + ") väisti iskun ja selvisi ilman vahinkoa.\n");
                 }
                 else {
-                    defender.setHealth(defender.health - damage);
+                    defender.setHealth(defender.getHealth() - damage);
                 }
             }
 
@@ -128,8 +145,7 @@ public class BattleFieldActivity extends AppCompatActivity {
         Storage.getInstance().getMovingLutemons().clear();
 
         // Get user back to main page
-        //Intent intent = new Intent(this, MainActivity.class);
-        //startActivity(intent);
+        returnHome();
     }
 
 }
