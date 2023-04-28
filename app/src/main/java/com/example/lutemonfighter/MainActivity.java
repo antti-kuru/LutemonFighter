@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        context = this;
+        context = MainActivity.this;
     }
 
     public void switchToAddLutemon(View view) {
@@ -45,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
     public void SwitchToViewStatistics(View view) {
         Intent intent = new Intent(this, StatisticsActivity.class);
         startActivity(intent);
+    }
+
+    public void saveLutemons(View view){
+        Storage.getInstance().saveLutemons(context);
+    }
+
+    public void loadLutemons(View view){
+        Storage.getInstance().loadLutemons(context);
     }
 
 }

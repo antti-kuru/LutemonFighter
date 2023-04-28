@@ -70,8 +70,14 @@ public class Storage {
     public void saveLutemons(Context context){
         try {
             ObjectOutputStream lutemonWriter = new ObjectOutputStream(context.openFileOutput("lutemons.data", Context.MODE_PRIVATE));
+            ObjectOutputStream lutemonInTrainingAreaWriter = new ObjectOutputStream(context.openFileOutput("lutemonsTrainingArea.data", Context.MODE_PRIVATE));
+            ObjectOutputStream lutemonInBattleFieldWriter = new ObjectOutputStream(context.openFileOutput("lutemonsBattleField.data", Context.MODE_PRIVATE));
             lutemonWriter.writeObject(lutemons);
+            lutemonInTrainingAreaWriter.writeObject(lutemonsInTrainingArea);
+            lutemonInBattleFieldWriter.writeObject(lutemonsInBattleField);
             lutemonWriter.close();
+            lutemonInTrainingAreaWriter.close();
+            lutemonInBattleFieldWriter.close();
         } catch (IOException e) {
             System.out.println("Lutemonin tallentaminen ei onnistunut!");
             //throw new RuntimeException(e);
@@ -82,9 +88,15 @@ public class Storage {
     // For loading users
     public void loadLutemons(Context context){
         try {
-            ObjectInputStream lutemonReader = new ObjectInputStream(context.openFileInput("lutemon.data"));
+            ObjectInputStream lutemonReader = new ObjectInputStream(context.openFileInput("lutemons.data"));
+            ObjectInputStream lutemonInTrainingAreaReader = new ObjectInputStream(context.openFileInput("lutemonsTrainingArea.data"));
+            ObjectInputStream lutemonInBattleFieldReader = new ObjectInputStream(context.openFileInput("lutemonsBattleField.data"));
             lutemons = (ArrayList<Lutemon>) lutemonReader.readObject();
+            lutemonsInTrainingArea = (ArrayList<Lutemon>) lutemonInTrainingAreaReader.readObject();
+            lutemonsInBattleField = (ArrayList<Lutemon>) lutemonInBattleFieldReader.readObject();
             lutemonReader.close();
+            lutemonInTrainingAreaReader.close();
+            lutemonInBattleFieldReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("Tiedoston lukeminen epäonnistui");
         } catch (IOException e) {

@@ -38,6 +38,7 @@ public class BattleFieldListAdapter extends RecyclerView.Adapter<BattleFieldView
                 int pos = holder.getAdapterPosition();
                 if (holder.checkBox.isChecked()) {
                     Storage.getInstance().addMovingLutemon(lutemons.get(pos));
+
                 }
             }
 
