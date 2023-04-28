@@ -46,6 +46,14 @@ public class BattleFieldActivity extends AppCompatActivity {
 
     // For two lutemons to fight each other
     public void fight(View view) {
+
+        // Check if user chose more or less than two lutemons
+         if (Storage.getInstance().getMovingLutemons().size() != 2) {
+            tvBattleLog.setText("Taisteluun tarvitaan kaksi lutemonia,\n hyökkääjä ja puolustaja!\n");
+            Storage.getInstance().getMovingLutemons().clear();
+            return;
+        }
+
         // Get chosen lutemons
         attacker = Storage.getInstance().getMovingLutemons().get(0);
         defender = Storage.getInstance().getMovingLutemons().get(1);
