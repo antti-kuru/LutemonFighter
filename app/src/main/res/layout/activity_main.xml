@@ -117,7 +117,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="90dp"
             android:layout_marginBottom="90dp"
-            android:background="@drawable/another_blueish_button"
+            android:background="@drawable/multicolored_blue_button"
             android:onClick="saveLutemons"
             android:text="Tallenna lutemonit"
             android:textColor="@android:color/white"

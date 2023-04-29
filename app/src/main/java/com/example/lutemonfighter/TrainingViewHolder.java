@@ -19,7 +19,7 @@ public class TrainingViewHolder extends RecyclerView.ViewHolder {
     public TrainingViewHolder(@NonNull View itemView) {
         super(itemView);
         checkBox = itemView.findViewById(R.id.cbChooseLutemonsToTrain);
-        lutemonNameAndColor2 = itemView.findViewById(R.id.txtLutemonAtTraining);
+        lutemonNameAndColor2 = itemView.findViewById(R.id.txtLutemonsAtTrainingArea);
         //constraintLayout = itemView.findViewById(R.id.constraintLayout);
     }
 }

@@ -18,7 +18,7 @@ import java.util.TimerTask;
 public class TrainingAreaActivity extends AppCompatActivity {
 
     Timer timer;
-    TextView tvFirst, tvSecond, tvThird, tvFourth, tvFifth, tvResult;
+    TextView tvFirst, tvSecond, tvThird, tvFourth, tvFifth;
 
     private ArrayList<Lutemon> lutemonStorage;
     private RecyclerView recyclerView;
@@ -41,7 +41,6 @@ public class TrainingAreaActivity extends AppCompatActivity {
         tvThird = findViewById(R.id.tvThirdEx);
         tvFourth = findViewById(R.id.tvFourthEx);
         tvFifth = findViewById(R.id.tvFifthEx);
-        tvResult = findViewById(R.id.tvResult);
 
 
     }
@@ -60,7 +59,7 @@ public class TrainingAreaActivity extends AppCompatActivity {
     public void letsTrain(View view) {
 
         // Create a list for the textviews
-        TextView[] textViews = {tvFirst, tvSecond, tvThird, tvFourth, tvFifth, tvResult};
+        TextView[] textViews = {tvFirst, tvSecond, tvThird, tvFourth, tvFifth};
         int index = 0;
         String trainingProgram;
 

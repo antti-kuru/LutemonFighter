@@ -40,7 +40,7 @@ public class ListLutemonActivity extends AppCompatActivity {
 
     public void moveLutemons(View view) {
 
-        RadioGroup rg = findViewById(R.id.radioGroup2);
+        RadioGroup rg = findViewById(R.id.rgMoveLutemons);
 
         switch(rg.getCheckedRadioButtonId()){
 

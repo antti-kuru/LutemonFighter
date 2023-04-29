@@ -26,7 +26,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         context = this;
         lutemonName = findViewById(R.id.editTextLutemonName);
-        rg = findViewById(R.id.radioGroup);
+        rg = findViewById(R.id.rgChooseColor);
         rgIcons = findViewById(R.id.rgIcons);
 
     }

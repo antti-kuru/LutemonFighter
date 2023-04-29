@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -12,6 +12,7 @@
             android:id="@+id/rvLutemonList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.46"
             app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +21,8 @@
         </androidx.recyclerview.widget.RecyclerView>
 
         <RadioGroup
-            android:id="@+id/radioGroup2"
+            android:id="@+id/rgMoveLutemons"
+            android:layout_marginTop="3dp"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -33,7 +35,7 @@
             <RadioButton
                 android:id="@+id/rbTrainingArea"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Treenaamaan" />
 
@@ -57,18 +59,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/blue_rounded_buttons"
+            android:background="@drawable/multicolored_blue_button"
             android:gravity="center"
             android:onClick="moveLutemons"
             android:text="Siirrä"
             android:textColor="@android:color/white"
             android:textSize="14sp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+            app:layout_constraintTop_toBottomOf="@+id/rgMoveLutemons" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvLutemonBattleField"
+            android:layout_marginTop="3dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -78,6 +83,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvLutemonTrainingArea"
+            android:layout_marginTop="3dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -90,10 +96,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text='Kotona olevat'
+            android:text='Kotona'
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.44"
+            app:layout_constraintHorizontal_bias="0.466"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -101,10 +107,10 @@
             android:id="@+id/tvTrainingAreaName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Treenaamassa olevat"
+            android:text="Treenialueella"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.46"
+            app:layout_constraintHorizontal_bias="0.479"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rvLutemonList" />
 
@@ -112,10 +118,10 @@
             android:id="@+id/tvBattlefieldName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text='Taistelukentällä olevat'
+            android:text='Taistelukentällä'
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.44"
+            app:layout_constraintHorizontal_bias="0.488"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rvLutemonTrainingArea" />
 
