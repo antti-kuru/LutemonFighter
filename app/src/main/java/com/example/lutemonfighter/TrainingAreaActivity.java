@@ -54,7 +54,7 @@ public class TrainingAreaActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 10000); // 10 000 ms = 10 s
+        }, 8000); // 8 000 ms = 8 s
     }
 
     // For lutemons to train
