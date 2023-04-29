@@ -50,7 +50,7 @@
             android:layout_marginTop="90dp"
             android:background="@drawable/multicolored_blue_button"
             android:onClick="switchToTrainingArea"
-            android:text="Harjoitusalueelle"
+            android:text="Treenialueelle"
             android:textColor="@android:color/white"
             android:textSize="14sp"
             android:paddingLeft="5dp"

@@ -13,7 +13,7 @@ public class AddLutemonActivity extends AppCompatActivity {
 
     private Context context;
     private EditText lutemonName;
-    private RadioGroup rg, rgIcons;
+    private RadioGroup rgColor, rgIcons;
     private String color;
     private int image;
 
@@ -24,7 +24,7 @@ public class AddLutemonActivity extends AppCompatActivity {
 
         context = this;
         lutemonName = findViewById(R.id.editTextLutemonName);
-        rg = findViewById(R.id.rgChooseColor);
+        rgColor = findViewById(R.id.rgChooseColor);
         rgIcons = findViewById(R.id.rgIcons);
 
     }
@@ -55,7 +55,7 @@ public class AddLutemonActivity extends AppCompatActivity {
                 break;
         }
 
-        switch (rg.getCheckedRadioButtonId()) {
+        switch (rgColor.getCheckedRadioButtonId()) {
 
             case R.id.rbWhite:
                 color = "Valkoinen";

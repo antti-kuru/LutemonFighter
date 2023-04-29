@@ -17,9 +17,9 @@ import java.util.TimerTask;
 
 public class TrainingAreaActivity extends AppCompatActivity {
 
-    Timer timer;
-    TextView tvFirst, tvSecond, tvThird, tvFourth, tvFifth;
-    StringBuilder sb;
+    private Timer timer;
+    private TextView tvFirst, tvSecond, tvThird, tvFourth, tvFifth;
+    private StringBuilder sb;
     private ArrayList<Lutemon> lutemonStorage;
     private RecyclerView rvTrainingArea;
 
@@ -54,7 +54,7 @@ public class TrainingAreaActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 8000); // 8 000 ms = 8 s
+        }, 7000); // 7 000 ms = 7 s
     }
 
     // For lutemons to train
@@ -64,7 +64,7 @@ public class TrainingAreaActivity extends AppCompatActivity {
         TextView[] textViews = {tvFirst, tvSecond, tvThird, tvFourth, tvFifth};
         int i = 0; // For iterating through the list of textviews
 
-        // StringBuilder variable for handling a multiline textview
+        // StringBuilder for handling a multiline textview
         sb = new StringBuilder();
 
         for (Lutemon lutemon : Storage.getInstance().getMovingLutemons()) {
@@ -83,7 +83,7 @@ public class TrainingAreaActivity extends AppCompatActivity {
             // Setting up our textviews
             textViews[i].setText(trainingProgram);
             textViews[i].setGravity(Gravity.CENTER);
-            textViews[i].setTextColor(Color.parseColor("#00BFFF"));
+            textViews[i].setTextColor(Color.parseColor("#00B4BD"));
             textViews[i].setTextSize(20);
 
             // After training, lutemon gains 2 xp, +2 attack and one completed training session
@@ -94,7 +94,8 @@ public class TrainingAreaActivity extends AppCompatActivity {
             i++;
             // Check if user wants to train more lutemons than there are items in the list
             if (i > textViews.length) {
-                //System.out.println("Treenaa max 5:tä lutemonia kerrallaan!");
+                sb.setLength(0);
+                sb.append("Salille mahtuu vain 5 lutemonia kerrallaan!\n");
                 break;
             }
 

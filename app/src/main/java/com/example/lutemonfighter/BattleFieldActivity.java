@@ -16,14 +16,12 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class BattleFieldActivity extends AppCompatActivity {
-    Timer timer;
-
     private ArrayList<Lutemon> lutemonStorage;
     private RecyclerView recyclerView;
+    private TextView tvBattleLog;
+    private Timer timer;
 
-    TextView tvBattleLog;
-
-    // String to help making a multiline textview
+    // String for making a multiline textview
     private String battleLog;
 
     private Lutemon attacker;
@@ -45,12 +43,12 @@ public class BattleFieldActivity extends AppCompatActivity {
         // Set up our textview containing the Battle Log
         tvBattleLog = findViewById(R.id.tvBattleLog);
         tvBattleLog.setGravity(Gravity.CENTER);
-        tvBattleLog.setTextColor(Color.parseColor("#00BFFF"));
+        tvBattleLog.setTextColor(Color.parseColor("#00B4BD"));
         tvBattleLog.setTextSize(14);
     }
 
     // For bringing user to home page after battling
-    public void returnHome() {
+    public void returnHome(int time) {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -58,7 +56,7 @@ public class BattleFieldActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 10000); // 10 000 ms = 10 s
+        }, time); // 10 000 ms = 10 s
     }
 
 
@@ -69,6 +67,7 @@ public class BattleFieldActivity extends AppCompatActivity {
          if (Storage.getInstance().getMovingLutemons().size() != 2) {
             tvBattleLog.setText("Taisteluun tarvitaan kaksi lutemonia,\n hyökkääjä ja puolustaja!\n");
             Storage.getInstance().getMovingLutemons().clear();
+            returnHome(3000);
             return;
         }
 
@@ -146,7 +145,7 @@ public class BattleFieldActivity extends AppCompatActivity {
         Storage.getInstance().getMovingLutemons().clear();
 
         // Get user back to main page
-        returnHome();
+        returnHome(10000);
     }
 
 }

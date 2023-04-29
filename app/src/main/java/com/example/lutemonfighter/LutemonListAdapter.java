@@ -2,7 +2,6 @@ package com.example.lutemonfighter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> {
 
     protected Context context;
-    protected ArrayList<Lutemon> lutemons = new ArrayList<>();
+    protected ArrayList<Lutemon> lutemons;
 
     public LutemonListAdapter(Context context, ArrayList<Lutemon> lutemons) {
         this.context = context;
