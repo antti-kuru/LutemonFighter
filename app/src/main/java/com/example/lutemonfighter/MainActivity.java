@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private Context context;
@@ -19,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchToAddLutemon(View view) {
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, AddLutemonActivity.class);
         startActivity(intent);
 
     }
@@ -47,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void saveLutemons(View view){
+    public void saveLutemons(View view) {
         Storage.getInstance().saveLutemons(context);
     }
 
-    public void loadLutemons(View view){
+    public void loadLutemons(View view) {
         Storage.getInstance().loadLutemons(context);
     }
 

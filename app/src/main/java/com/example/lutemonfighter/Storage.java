@@ -63,19 +63,18 @@ public class Storage {
         for(Lutemon l : lutemons){
             System.out.println(l.getName() + " " + l.getColor() + " " + l.getAttack() + " " + l.getDefence()+ " " + l.getMaxHealth());
         }
-
-
     }
 
+    // For saving lutemons
     public void saveLutemons(Context context){
         try {
-            ObjectOutputStream lutemonWriter = new ObjectOutputStream(context.openFileOutput("lutemons.data", Context.MODE_PRIVATE));
+            ObjectOutputStream lutemonInHomeWriter = new ObjectOutputStream(context.openFileOutput("lutemons.data", Context.MODE_PRIVATE));
             ObjectOutputStream lutemonInTrainingAreaWriter = new ObjectOutputStream(context.openFileOutput("lutemonsTrainingArea.data", Context.MODE_PRIVATE));
             ObjectOutputStream lutemonInBattleFieldWriter = new ObjectOutputStream(context.openFileOutput("lutemonsBattleField.data", Context.MODE_PRIVATE));
-            lutemonWriter.writeObject(lutemons);
+            lutemonInHomeWriter.writeObject(lutemons);
             lutemonInTrainingAreaWriter.writeObject(lutemonsInTrainingArea);
             lutemonInBattleFieldWriter.writeObject(lutemonsInBattleField);
-            lutemonWriter.close();
+            lutemonInHomeWriter.close();
             lutemonInTrainingAreaWriter.close();
             lutemonInBattleFieldWriter.close();
         } catch (IOException e) {
@@ -85,16 +84,16 @@ public class Storage {
 
     }
 
-    // For loading users
+    // For loading lutemons
     public void loadLutemons(Context context){
         try {
-            ObjectInputStream lutemonReader = new ObjectInputStream(context.openFileInput("lutemons.data"));
+            ObjectInputStream lutemonInHomeReader = new ObjectInputStream(context.openFileInput("lutemons.data"));
             ObjectInputStream lutemonInTrainingAreaReader = new ObjectInputStream(context.openFileInput("lutemonsTrainingArea.data"));
             ObjectInputStream lutemonInBattleFieldReader = new ObjectInputStream(context.openFileInput("lutemonsBattleField.data"));
-            lutemons = (ArrayList<Lutemon>) lutemonReader.readObject();
+            lutemons = (ArrayList<Lutemon>) lutemonInHomeReader.readObject();
             lutemonsInTrainingArea = (ArrayList<Lutemon>) lutemonInTrainingAreaReader.readObject();
             lutemonsInBattleField = (ArrayList<Lutemon>) lutemonInBattleFieldReader.readObject();
-            lutemonReader.close();
+            lutemonInHomeReader.close();
             lutemonInTrainingAreaReader.close();
             lutemonInBattleFieldReader.close();
         } catch (FileNotFoundException e) {

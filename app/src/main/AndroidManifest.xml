@@ -24,7 +24,7 @@
             android:name=".TrainingAreaActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".AddLutemonActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

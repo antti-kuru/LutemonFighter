@@ -9,9 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class StatisticsActivity extends AppCompatActivity {
 
     private Storage lutemonStorage;
-    private RecyclerView rvHome;
-    private RecyclerView rvTraining;
-    private RecyclerView rvBattlefield;
+    private RecyclerView rvHome, rvTraining, rvBattlefield;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,13 +17,16 @@ public class StatisticsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_statistics);
 
         lutemonStorage = Storage.getInstance();
+
         rvHome = findViewById(R.id.rvHomeStats);
-        rvTraining = findViewById(R.id.rvTrainingStats);
-        rvBattlefield = findViewById(R.id.rvBattlefieldStats);
         rvHome.setLayoutManager(new LinearLayoutManager(this));
         rvHome.setAdapter(new StatisticsListAdapter(getApplicationContext(), lutemonStorage.getLutemons()));
+
+        rvTraining = findViewById(R.id.rvTrainingStats);
         rvTraining.setLayoutManager(new LinearLayoutManager(this));
         rvTraining.setAdapter(new StatisticsListAdapter(getApplicationContext(), lutemonStorage.getLutemonsInTrainingArea()));
+
+        rvBattlefield = findViewById(R.id.rvBattlefieldStats);
         rvBattlefield.setLayoutManager(new LinearLayoutManager(this));
         rvBattlefield.setAdapter(new StatisticsListAdapter(getApplicationContext(), lutemonStorage.getLutemonsInBattleField()));
 

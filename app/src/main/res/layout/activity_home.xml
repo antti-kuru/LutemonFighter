@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".AddLutemonActivity">
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/rgChooseColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -55,7 +55,7 @@
         android:id="@+id/editTextLutemonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="48dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Lutemonin nimi"
@@ -71,9 +71,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:onClick="createLutemon"
-        android:text="Lisää uusi Lutemon"
+        android:text="Luo uusi Lutemon"
         android:textColor="@android:color/white"
-        android:background="@drawable/blue_rounded_buttons"
+        android:background="@drawable/multicolored_blue_button"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,85 +85,90 @@
         android:id="@+id/rgIcons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="65dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.408"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+        app:layout_constraintTop_toBottomOf="@+id/rgChooseColor">
 
         <RadioButton
             android:id="@+id/rbCrab"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/rbFrog"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" />
 
         <RadioButton
             android:id="@+id/rbMonkey"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" />
 
         <RadioButton
             android:id="@+id/rbPig"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" />
 
         <RadioButton
             android:id="@+id/rbPlatypus"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" />
     </RadioGroup>
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="59dp"
-        android:layout_height="30dp"
+        android:layout_width="60dp"
+        android:layout_height="36dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintHorizontal_bias="0.022"
         app:layout_constraintStart_toEndOf="@+id/rgIcons"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/rgChooseColor"
         app:srcCompat="@drawable/crab_icon" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="60dp"
-        android:layout_height="31dp"
+        android:layout_height="36dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.282"
+        app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toEndOf="@+id/rgIcons"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:srcCompat="@drawable/frog_icon" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="45dp"
-        android:layout_height="35dp"
+        android:layout_width="60dp"
+        android:layout_height="36dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toEndOf="@+id/rgIcons"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:srcCompat="@drawable/monkey_icon" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="42dp"
-        android:layout_height="35dp"
+        android:layout_width="60dp"
+        android:layout_height="36dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.293"
+        app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toEndOf="@+id/rgIcons"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:srcCompat="@drawable/pig_icon" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="32dp"
-        android:layout_height="31dp"
+        android:layout_width="60dp"
+        android:layout_height="36dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.284"
+        app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toEndOf="@+id/rgIcons"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
         app:srcCompat="@drawable/platypus_icon" />

@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class BattleFieldViewHolder extends RecyclerView.ViewHolder {
     CheckBox checkBox;
-    TextView lutemonNameAndColor3;
+    TextView lutemonNameAndColor;
 
     public BattleFieldViewHolder(@NonNull View itemView) {
         super(itemView);
-        checkBox = itemView.findViewById(R.id.cbChooseLutemonToBattle);
-        lutemonNameAndColor3 = itemView.findViewById(R.id.txtLutemonAtBattlefield);
+        checkBox = itemView.findViewById(R.id.cbChooseLutemonsToBattle);
+        lutemonNameAndColor = itemView.findViewById(R.id.txtLutemonsAtBattlefield);
     }
 }
 

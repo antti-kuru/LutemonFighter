@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="25dp"
@@ -9,11 +8,11 @@
     android:background="@android:color/white"
     android:orientation="horizontal">
 
-
     <CheckBox
-        android:id="@+id/cbChooseLutemonToBattle"
+        android:id="@+id/cbChooseLutemonsToBattle"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:buttonTint="@android:color/holo_blue_light"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -22,12 +21,12 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtLutemonAtBattlefield"
+            android:id="@+id/txtLutemonsAtBattlefield"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Name + Color"
-            android:textColor="#00BFFF"
+            android:text="Name (color)"
+            android:textColor="@android:color/holo_blue_light"
             android:textSize="18sp" />
 
     </LinearLayout>

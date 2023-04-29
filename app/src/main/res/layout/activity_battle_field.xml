@@ -8,25 +8,28 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".TrainingAreaActivity">
+        tools:context=".BattleFieldActivity">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvBattle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btnStartBattle"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/blue_rounded_buttons"
+            android:background="@drawable/multicolored_blue_button"
             android:onClick="fight"
             android:text="Taistele"
             android:textColor="@android:color/white"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rvBattle" />
@@ -36,7 +39,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="Battle Log"
             android:lineSpacingExtra="8sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

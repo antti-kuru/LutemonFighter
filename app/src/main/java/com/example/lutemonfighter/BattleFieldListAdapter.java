@@ -4,8 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,7 +20,6 @@ public class BattleFieldListAdapter extends RecyclerView.Adapter<BattleFieldView
         this.lutemons = lutemons;
     }
 
-
     @NonNull
     @Override
     public BattleFieldViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -31,23 +28,14 @@ public class BattleFieldListAdapter extends RecyclerView.Adapter<BattleFieldView
 
     @Override
     public void onBindViewHolder(@NonNull BattleFieldViewHolder holder, int position) {
-        holder.lutemonNameAndColor3.setText(lutemons.get(position).getName() + " (" + lutemons.get(position).getColor() + ")");
+        holder.lutemonNameAndColor.setText(lutemons.get(position).getName() + " (" + lutemons.get(position).getColor() + ")");
 
-        holder.checkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int pos = holder.getAdapterPosition();
-                if (holder.checkBox.isChecked()) {
-                    if (!Storage.getInstance().getMovingLutemons().contains(lutemons.get(pos))){
-                        Storage.getInstance().addMovingLutemon(lutemons.get(pos));
-                    }
-                } else {
-                    Storage.getInstance().getMovingLutemons().remove(lutemons.get(pos));
-
-                }
-                notifyDataSetChanged();
+        // Check if user selects any lutemons to battle
+        holder.checkBox.setOnClickListener(view -> {
+            int pos = holder.getAdapterPosition();
+            if (holder.checkBox.isChecked()) {
+                Storage.getInstance().addMovingLutemon(lutemons.get(pos));
             }
-
         });
 
     }

@@ -1,115 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="0dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginRight="0dp"
-    android:background="#00BFFF"
-    android:orientation="horizontal">
-
-
-    <ImageView
-        android:id="@+id/imageDefaultIcon"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:srcCompat="@android:drawable/btn_star" />
-
-    <LinearLayout
-        android:id="@+id/statsLayout"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:layout_marginLeft="1dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="1dp"
+        android:background="@android:color/holo_blue_light"
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/statsNameAndColor"
+
+        <ImageView
+            android:id="@+id/imageDefaultIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@android:drawable/btn_star" />
+
+        <LinearLayout
+            android:id="@+id/statsLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name + Color"
-            android:textColor="@android:color/white"
-            android:textSize="18sp" />
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingLeft="5dp">
 
-        <TextView
-            android:id="@+id/statsAttack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:text="Hyökkäys"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:textStyle="italic" />
+            <TextView
+                android:id="@+id/statsNameAndColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name (color)"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/statsDefense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:text="Puolustus"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:textStyle="italic" />
+            <TextView
+                android:id="@+id/statsAttack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Hyökkäys"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="italic" />
 
-        <TextView
-            android:id="@+id/statsHealthPoints"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:text="Elämäpisteet"
-            android:textSize="14sp"
-            android:textColor="@android:color/white"
-            android:textStyle="italic"/>
+            <TextView
+                android:id="@+id/statsDefence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Puolustus"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="italic" />
 
-        <TextView
-            android:id="@+id/statsExperiencePoints"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:text="Kokemuspisteet"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:textStyle="italic" />
+            <TextView
+                android:id="@+id/statsHealthPoints"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Elämäpisteet"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:textStyle="italic"/>
 
-        <TextView
-            android:id="@+id/statsBattlesWon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:text="Voitot"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:textStyle="italic" />
+            <TextView
+                android:id="@+id/statsExperiencePoints"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Kokemuspisteet"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="italic" />
 
-        <TextView
-            android:id="@+id/statsBattlesLost"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:text="Häviöt"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:textStyle="italic" />
+            <TextView
+                android:id="@+id/statsBattlesWon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Voitot"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="italic" />
 
-        <TextView
-            android:id="@+id/statsBattlingSessions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:text="Ottelukerrat"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:textStyle="italic" />
+            <TextView
+                android:id="@+id/statsBattlesLost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Häviöt"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="italic" />
 
-        <TextView
-            android:id="@+id/statsTrainingSessions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:text="Treenikerrat"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:textStyle="italic" />
+            <TextView
+                android:id="@+id/statsBattlingSessions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Ottelukerrat"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="italic" />
 
-    </LinearLayout>
-</androidx.appcompat.widget.LinearLayoutCompat>
+            <TextView
+                android:id="@+id/statsTrainingSessions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Treenikerrat"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

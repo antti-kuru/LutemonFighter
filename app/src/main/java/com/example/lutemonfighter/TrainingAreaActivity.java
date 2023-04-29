@@ -5,57 +5,105 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class TrainingAreaActivity extends AppCompatActivity {
-    TextView tvFirst, tvSecond, tvThird, tvFourth, tvFifth, tvResult;
 
+    Timer timer;
+    TextView tvFirst, tvSecond, tvThird, tvFourth, tvFifth;
+    StringBuilder sb;
     private ArrayList<Lutemon> lutemonStorage;
-    private RecyclerView recyclerView;
+    private RecyclerView rvTrainingArea;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training_area);
 
-        lutemonStorage = Storage.getInstance().getLutemonsInTrainingArea();
-        recyclerView = findViewById(R.id.rvChooseTraining);
+        timer = new Timer();
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new TrainingListAdapter(getApplicationContext(), lutemonStorage));
+        lutemonStorage = Storage.getInstance().getLutemonsInTrainingArea();
+        rvTrainingArea = findViewById(R.id.rvChooseTraining);
+
+        rvTrainingArea.setLayoutManager(new LinearLayoutManager(this));
+        rvTrainingArea.setAdapter(new TrainingListAdapter(getApplicationContext(), lutemonStorage));
 
         tvFirst = findViewById(R.id.tvFirstEx);
         tvSecond = findViewById(R.id.tvSecondEx);
         tvThird = findViewById(R.id.tvThirdEx);
         tvFourth = findViewById(R.id.tvFourthEx);
         tvFifth = findViewById(R.id.tvFifthEx);
-        tvResult = findViewById(R.id.tvResult);
-
 
     }
 
-    public void letsTrain(View view) {
 
-        for (Lutemon lutemon : Storage.getInstance().getMovingLutemons()){
-            lutemon.setAttack(lutemon.getAttack()+2);
-            lutemon.setExperience(lutemon.getExperience()+2);
-            tvFirst.setText(lutemon.getName() + " juoksee juoksumatolla!");
+    // For bringing user automatically back to home page after training
+    public void returnHome() {
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(TrainingAreaActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }, 10000); // 10 000 ms = 10 s
+    }
 
+    // For lutemons to train
+    public void train(View view) {
 
-            tvSecond.setText(lutemon.getName() + " tekee punnerruksia");
-            tvThird.setText(lutemon.getName() + " rutistaa vatsalihaksia");
-            tvFourth.setText(lutemon.getName() + " vetää leukoja");
-            tvFifth.setText(lutemon.getName() + " tekee kyykkyjä");
-            tvResult.setText(lutemon.getName() + " suoritti treenin ja sai 2 kokemuspistettä!");
+        // Create a list for the textviews
+        TextView[] textViews = {tvFirst, tvSecond, tvThird, tvFourth, tvFifth};
+        int i = 0; // For iterating through the list of textviews
+
+        // StringBuilder variable for handling a multiline textview
+        sb = new StringBuilder();
+
+        for (Lutemon lutemon : Storage.getInstance().getMovingLutemons()) {
+
+            // Creating the training program
+            sb.setLength(0); // Resetting the StringBuilder
+            sb.append(lutemon.getName()).append(" juoksee juoksumatolla!\n");
+            sb.append(lutemon.getName()).append(" tekee punnerruksia\n");
+            sb.append(lutemon.getName()).append(" rutistaa vatsalihaksia\n");
+            sb.append(lutemon.getName()).append(" vetää leukoja\n");
+            sb.append(lutemon.getName()).append(" tekee kyykkyjä\n");
+            sb.append(lutemon.getName()).append(" suoritti treenin ja sai 2 kokemuspistettä!\n");
+
+            String trainingProgram = sb.toString();
+
+            // Setting up our textviews
+            textViews[i].setText(trainingProgram);
+            textViews[i].setGravity(Gravity.CENTER);
+            textViews[i].setTextColor(Color.parseColor("#00BFFF"));
+            textViews[i].setTextSize(20);
+
+            // After training, lutemon gains 2 xp, +2 attack and one completed training session
+            lutemon.setExperience(lutemon.getExperience() + 2);
+            lutemon.setAttack(lutemon.getAttack() + 2);
+            lutemon.setTrainingSessions(lutemon.getTrainingSessions() + 1);
+
+            i++;
+            // Check if user wants to train more lutemons than there are items in the list
+            if (i > textViews.length) {
+                //System.out.println("Treenaa max 5:tä lutemonia kerrallaan!");
+                break;
+            }
+
         }
 
-
         Storage.getInstance().getMovingLutemons().clear();
-        //Intent intent = new Intent(this, MainActivity.class);
-        //startActivity(intent);
+
+        // Get user back to home page
+        returnHome();
+
     }
 }

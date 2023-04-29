@@ -7,7 +7,6 @@ public class Lutemon implements Serializable {
     protected String color;
     protected int image;
     protected int attack;
-    protected int superAttack;
     protected int defence;
     protected int experience;
     protected int health;
@@ -18,120 +17,8 @@ public class Lutemon implements Serializable {
     protected int fights;
     protected int trainingSessions;
 
-
-    public void setAttack(int attack) {
-        this.attack = attack;
-    }
-
-    public void setExperience(int experience) {
-        this.experience = experience;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public int getAttack() {
-        return attack;
-    }
-
-    public int getDefence() {
-        return defence;
-    }
-
-    public int getHealth() {
-        return health;
-    }
-
-    public int getImage() {
-        return image;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
-    }
-
-    public void setSuperAttack(int superAttack) {
-        this.superAttack = superAttack;
-    }
-
-    public void setDefence(int defence) {
-        this.defence = defence;
-    }
-
-    public void setMaxHealth(int maxHealth) {
-        this.maxHealth = maxHealth;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setIdCounter(int idCounter) {
-        this.idCounter = idCounter;
-    }
-
-    public void setWins(int wins) {
-        this.wins = wins;
-    }
-
-    public void setFights(int fights) {
-        this.fights = fights;
-    }
-
-    public void setTrainingSessions(int trainingSessions) {
-        this.trainingSessions = trainingSessions;
-    }
-
-    public int getSuperAttack() {
-        return superAttack;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public int getIdCounter() {
-        return idCounter;
-    }
-
-    public int getWins() {
-        return wins;
-    }
-
-    public int getFights() {
-        return fights;
-    }
-
-    public int getTrainingSessions() {
-        return trainingSessions;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public int getExperience() {
-        return experience;
-    }
-
-    public int getMaxHealth() {
-        return maxHealth;
-    }
-
-    public Lutemon(){
+    // Default constructor for lutemons
+    public Lutemon() {
 
         experience = 0;
         wins = 0;
@@ -139,17 +26,125 @@ public class Lutemon implements Serializable {
         trainingSessions = 0;
     }
 
-    public void defence(Lutemon lutemon){
-
+    public int defence(Lutemon lutemon) {
+        // In this defence method we calculate and return the damage done by the attacker
+        return (lutemon.attack() - defence);
     }
 
-    public int attack(){
-       return attack;
+    public int attack() {
+        // Here we just return the attack so it's basically a getter
+        return attack;
     }
 
-    public int getNumberOfCreatedLutemons(){
+    // Getters and setters
+
+    // Attack
+    public int getAttack() {
+        return attack;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    // Defence
+    public int getDefence() {
+        return defence;
+    }
+
+    // Name
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Color
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    // Health
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    // Image
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
+    // Id
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    // Wins
+    public int getWins() {
+        return wins;
+    }
+
+    public void setWins(int wins) {
+        this.wins = wins;
+    }
+
+    // Fights
+    public int getFights() {
+        return fights;
+    }
+
+    public void setFights(int fights) {
+        this.fights = fights;
+    }
+
+    // Training sessions
+    public int getTrainingSessions() {
+        return trainingSessions;
+    }
+
+    public void setTrainingSessions(int trainingSessions) {
+        this.trainingSessions = trainingSessions;
+    }
+
+    // Experience
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    // Max Health
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+
+    // Number of created lutemons
+    public int getIdCounter() {
         return idCounter;
     }
 
+    public void setIdCounter(int idCounter) {
+        this.idCounter = idCounter;
+    }
 
 }

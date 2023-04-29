@@ -13,7 +13,6 @@ public class ListLutemonActivity extends AppCompatActivity {
 
     private Storage lutemonStorage;
     private RecyclerView recyclerView;
-
     private RecyclerView rvTrainingArea;
     private RecyclerView rvBattleField;
 
@@ -23,13 +22,16 @@ public class ListLutemonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_lutemons);
 
         lutemonStorage = Storage.getInstance();
+
         recyclerView = findViewById(R.id.rvLutemonList);
-        rvTrainingArea = findViewById(R.id.rvLutemonTrainingArea);
-        rvBattleField = findViewById(R.id.rvLutemonBattleField);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new LutemonListAdapter(getApplicationContext(), lutemonStorage.getLutemons()));
+
+        rvTrainingArea = findViewById(R.id.rvLutemonTrainingArea);
         rvTrainingArea.setLayoutManager(new LinearLayoutManager(this));
         rvTrainingArea.setAdapter(new LutemonListAdapter(getApplicationContext(), lutemonStorage.getLutemonsInTrainingArea()));
+
+        rvBattleField = findViewById(R.id.rvLutemonBattleField);
         rvBattleField.setLayoutManager(new LinearLayoutManager(this));
         rvBattleField.setAdapter(new LutemonListAdapter(getApplicationContext(), lutemonStorage.getLutemonsInBattleField()));
 
@@ -40,7 +42,7 @@ public class ListLutemonActivity extends AppCompatActivity {
 
     public void moveLutemons(View view) {
 
-        RadioGroup rg = findViewById(R.id.radioGroup2);
+        RadioGroup rg = findViewById(R.id.rgMoveLutemons);
 
         switch(rg.getCheckedRadioButtonId()){
 
