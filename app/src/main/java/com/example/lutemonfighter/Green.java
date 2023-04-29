@@ -1,8 +1,9 @@
 package com.example.lutemonfighter;
 
-public class Green extends Lutemon{
+public class Green extends Lutemon {
 
-    public Green(String color, String name, int image){
+    // Public constructor for Green Lutemon
+    public Green(String color, String name, int image) {
         attack = 6;
         defence = 3;
         maxHealth = 19;
@@ -10,5 +11,7 @@ public class Green extends Lutemon{
         this.color = color;
         this.name = name;
         this.image = image;
+
     }
+
 }

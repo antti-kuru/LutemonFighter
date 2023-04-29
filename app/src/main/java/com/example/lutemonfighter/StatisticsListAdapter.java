@@ -28,9 +28,9 @@ public class StatisticsListAdapter extends RecyclerView.Adapter<StatisticsViewHo
 
     @Override
     public void onBindViewHolder(@NonNull StatisticsViewHolder holder, int position) {
-        holder.lutemonNameAndColor.setText(lutemons.get(position).getName() + "(" + lutemons.get(position).getColor() + ")");
+        holder.lutemonNameAndColor.setText(lutemons.get(position).getName() + " (" + lutemons.get(position).getColor() + ")");
         holder.lutemonAttack.setText("Hyökkäys: " + lutemons.get(position).getAttack());
-        holder.lutemonDefense.setText("Puolustus: " + lutemons.get(position).getDefence());
+        holder.lutemonDefence.setText("Puolustus: " + lutemons.get(position).getDefence());
         holder.lutemonHealth.setText("Elämäpisteet: " + lutemons.get(position).getHealth() + "/" + lutemons.get(position).getMaxHealth());
         holder.lutemonExperience.setText("Kokemuspisteet: " + lutemons.get(position).getExperience());
         holder.lutemonWins.setText("Voitot: " + lutemons.get(position).getWins());

@@ -6,24 +6,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
-public class HomeActivity extends AppCompatActivity {
+public class AddLutemonActivity extends AppCompatActivity {
 
     private Context context;
     private EditText lutemonName;
     private RadioGroup rg, rgIcons;
     private String color;
-
     private int image;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         context = this;
         lutemonName = findViewById(R.id.editTextLutemonName);
         rg = findViewById(R.id.rgChooseColor);
@@ -32,9 +30,9 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
-    public void createLutemon(View view){
+    public void createLutemon(View view) {
 
-        switch (rgIcons.getCheckedRadioButtonId()){
+        switch (rgIcons.getCheckedRadioButtonId()) {
 
             case R.id.rbCrab:
                 image = R.drawable.crab_icon;
@@ -57,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
                 break;
         }
 
-        switch (rg.getCheckedRadioButtonId()){
+        switch (rg.getCheckedRadioButtonId()) {
 
             case R.id.rbWhite:
                 color = "Valkoinen";
@@ -90,19 +88,13 @@ public class HomeActivity extends AppCompatActivity {
         }
 
 
+        // Switching back to the main page
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-
-
-
 
         Storage.getInstance().listLutemons();
 
     }
-
-
-
-
 
 
 }

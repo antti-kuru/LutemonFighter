@@ -40,7 +40,7 @@ public class BattleFieldActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rvBattle);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new TrainingListAdapter(getApplicationContext(), lutemonStorage));
+        recyclerView.setAdapter(new BattleFieldListAdapter(getApplicationContext(), lutemonStorage));
 
         // Set up our textview containing the Battle Log
         tvBattleLog = findViewById(R.id.tvBattleLog);
@@ -49,6 +49,7 @@ public class BattleFieldActivity extends AppCompatActivity {
         tvBattleLog.setTextSize(14);
     }
 
+    // For bringing user to home page after battling
     public void returnHome() {
         timer.schedule(new TimerTask() {
             @Override
@@ -57,7 +58,7 @@ public class BattleFieldActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 8000);
+        }, 10000); // 10 000 ms = 10 s
     }
 
 
@@ -75,32 +76,32 @@ public class BattleFieldActivity extends AppCompatActivity {
         attacker = Storage.getInstance().getMovingLutemons().get(0);
         defender = Storage.getInstance().getMovingLutemons().get(1);
 
+
+        battleLog = "Ottelu alkaa!\n";
+
         // While loop controlling the battle
-        battleLog = "Let the battle begin!\n";
-
-
-        // Each iteration we check if the lutemon, that's going to take the next hit, has
+        // Each iteration we check if the lutemon that's going to take the next hit, has
         // enough health points left
         while (defender.getHealth() > 0) {
             int damage = defender.defence(attacker);
 
             // Display stats for the attacker
-            battleLog += ("1: " + attacker.getName() + "(" + attacker.getColor() + ") att: " + attacker.getAttack() + "; def: " + attacker.getDefence() + "; exp: " + attacker.getExperience() + "; health: " + attacker.getHealth() + "/" + attacker.getMaxHealth() + "\n");
+            battleLog += ("1: " + attacker.getName() + " (" + attacker.getColor() + ") att: " + attacker.getAttack() + "; def: " + attacker.getDefence() + "; exp: " + attacker.getExperience() + "; health: " + attacker.getHealth() + "/" + attacker.getMaxHealth() + "\n");
             // And stats for the defender
-            battleLog += ("2: " + defender.getName() + "(" + defender.getColor() + ") att: " + defender.getAttack() + "; def: " + defender.getDefence() + "; exp: " + defender.getExperience() + "; health: " + defender.getHealth() + "/" + defender.getMaxHealth() + "\n");
+            battleLog += ("2: " + defender.getName() + " (" + defender.getColor() + ") att: " + defender.getAttack() + "; def: " + defender.getDefence() + "; exp: " + defender.getExperience() + "; health: " + defender.getHealth() + "/" + defender.getMaxHealth() + "\n");
 
             // Generate a random number from 1-10 and check if it's greater than 8, leaving a
             // 20 % change for the super attack that does +2 damage
             if ((int)(Math.random() * 10) + 1 > 8) {
-                battleLog += (attacker.getName() + "(" + attacker.getColor() + ") käyttää superiskun.\n");
+                battleLog += (attacker.getName() + " (" + attacker.getColor() + ") käyttää superiskun.\n");
                 // Leaving no chance for the defending lutemon to avoid incoming super attack
                 defender.setHealth(defender.getHealth() - (damage + 2));
             }
             else {
-                battleLog += (attacker.getName() + "(" + attacker.getColor() + ") iskee puolustajaa.\n");
-                // Create a small probability for the lutemon to avoid incoming regural attack
+                battleLog += (attacker.getName() + " (" + attacker.getColor() + ") iskee puolustajaa.\n");
+                // Create a small probability for the lutemon to avoid incoming regular attack
                 if ((int)(Math.random() * 10) + 1 > 9) {
-                    battleLog += (defender.getName() + "(" + defender.getColor() + ") väisti iskun ja selvisi ilman vahinkoa.\n");
+                    battleLog += (defender.getName() + " (" + defender.getColor() + ") väisti iskun ja selvisi ilman vahinkoa.\n");
                 }
                 else {
                     defender.setHealth(defender.getHealth() - damage);
@@ -109,12 +110,12 @@ public class BattleFieldActivity extends AppCompatActivity {
 
             // After each attack we also check if the defending lutemon stays alive
             if (defender.getHealth() > 0) {
-                battleLog += (defender.getName() + "(" + defender.getColor() + ") jäi henkiin " + defender.getHealth() + "/" + defender.getMaxHealth() + "elämäpisteellä.\n");
+                battleLog += (defender.getName() + " (" + defender.getColor() + ") jäi henkiin " + defender.getHealth() + "/" + defender.getMaxHealth() + "elämäpisteellä.\n");
             }
             // If there is not enough health for the defender, it faints / loses
             else {
-                battleLog += (defender.getName() + "(" + defender.getColor() + ") menetti elämäpisteet ja hävisi ottelun.\n");
-                battleLog += ("The Battle is over.\n");
+                battleLog += (defender.getName() + " (" + defender.getColor() + ") menetti elämäpisteet ja hävisi ottelun.\n");
+                battleLog += ("Ottelu päättyi.\n");
                 break;
             }
 
@@ -138,9 +139,9 @@ public class BattleFieldActivity extends AppCompatActivity {
         attacker.setHealth(attacker.maxHealth);
         defender.setHealth(defender.maxHealth);
 
-        // Give the winning lutemon +2 xp and attack points
-        attacker.setAttack(attacker.getAttack() + 2);
-        attacker.setExperience(attacker.getExperience() + 2);
+        // Give the winning lutemon +1 xp and attack point
+        attacker.setExperience(attacker.getExperience() + 1);
+        attacker.setAttack(attacker.getAttack() + 1);
 
         Storage.getInstance().getMovingLutemons().clear();
 
