@@ -10,14 +10,14 @@ import java.util.ArrayList;
 
 public class Storage {
 
+    // Lutemons at home
     protected ArrayList<Lutemon> lutemons = new ArrayList<>();
-
-    private ArrayList<Lutemon> movingLutemons = new ArrayList<>();
-
 
     private ArrayList<Lutemon> lutemonsInTrainingArea = new ArrayList<>();
 
     private ArrayList<Lutemon> lutemonsInBattleField = new ArrayList<>();
+
+    private ArrayList<Lutemon> movingLutemons = new ArrayList<>();
 
     private static Storage lutemonStorage = null; // Initialization of singleton
 
@@ -28,22 +28,26 @@ public class Storage {
         return lutemonStorage;
     }
 
-    // addLutemon
+    // Everytime a lutemon is created it is moved straight to home
+    public void addLutemon(Lutemon lutemon) {
+        lutemons.add(lutemon);
+    }
+
+    public void addMovingLutemon(Lutemon lutemon) {
+        movingLutemons.add(lutemon);
+    }
+
+    public void addLutemonToBattleField(Lutemon lutemon) {
+        lutemonsInBattleField.add(lutemon);
+    }
+
+    public void addLutemonToTrainingArea(Lutemon lutemon) {
+        lutemonsInTrainingArea.add(lutemon);
+    }
 
     public ArrayList<Lutemon> getMovingLutemons() {
         return movingLutemons;
     }
-
-    public void addLutemon(Lutemon lutemon){
-        lutemons.add(lutemon);
-    }
-
-    public void addMovingLutemon(Lutemon lutemon) {movingLutemons.add(lutemon);}
-
-    public void addLutemonToBattleField(Lutemon lutemon) {lutemonsInBattleField.add(lutemon);}
-
-    public void addLutemonToTrainingArea(Lutemon lutemon) {lutemonsInTrainingArea.add(lutemon);}
-
 
     public ArrayList<Lutemon> getLutemonsInTrainingArea() {
         return lutemonsInTrainingArea;
@@ -56,17 +60,16 @@ public class Storage {
     public ArrayList<Lutemon> getLutemons() {
         return lutemons;
     }
-    // getLutemon
-    // listLutemons
 
-    public void listLutemons(){
-        for(Lutemon l : lutemons){
-            System.out.println(l.getName() + " " + l.getColor() + " " + l.getAttack() + " " + l.getDefence()+ " " + l.getMaxHealth());
+    // Printing the stats of the lutemons into the console
+    public void listLutemons() {
+        for (Lutemon l : lutemons) {
+            System.out.println(l.getName() + " " + l.getColor() + " " + l.getAttack() + " " + l.getDefence() + " " + l.getMaxHealth());
         }
     }
 
     // For saving lutemons
-    public void saveLutemons(Context context){
+    public void saveLutemons(Context context) {
         try {
             ObjectOutputStream lutemonInHomeWriter = new ObjectOutputStream(context.openFileOutput("lutemons.data", Context.MODE_PRIVATE));
             ObjectOutputStream lutemonInTrainingAreaWriter = new ObjectOutputStream(context.openFileOutput("lutemonsTrainingArea.data", Context.MODE_PRIVATE));
@@ -81,11 +84,10 @@ public class Storage {
             System.out.println("Lutemonin tallentaminen ei onnistunut!");
             //throw new RuntimeException(e);
         }
-
     }
 
     // For loading lutemons
-    public void loadLutemons(Context context){
+    public void loadLutemons(Context context) {
         try {
             ObjectInputStream lutemonInHomeReader = new ObjectInputStream(context.openFileInput("lutemons.data"));
             ObjectInputStream lutemonInTrainingAreaReader = new ObjectInputStream(context.openFileInput("lutemonsTrainingArea.data"));

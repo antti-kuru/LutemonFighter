@@ -38,37 +38,37 @@ public class ListLutemonActivity extends AppCompatActivity {
     }
 
 
-
-
     public void moveLutemons(View view) {
 
         RadioGroup rg = findViewById(R.id.rgMoveLutemons);
 
-        switch(rg.getCheckedRadioButtonId()){
+        switch (rg.getCheckedRadioButtonId()) {
 
+            /* To avoid duplicates we first remove the lutemon from every list and then add it to
+            the destination chosen by the user */
             case R.id.rbTrainingArea:
-                for (Lutemon l : Storage.getInstance().getMovingLutemons()){
-                    Storage.getInstance().getLutemonsInTrainingArea().remove(l);
-                    Storage.getInstance().addLutemonToTrainingArea(l);
+                for (Lutemon l : Storage.getInstance().getMovingLutemons()) {
                     Storage.getInstance().getLutemons().remove(l);
                     Storage.getInstance().getLutemonsInBattleField().remove(l);
+                    Storage.getInstance().getLutemonsInTrainingArea().remove(l);
+                    Storage.getInstance().addLutemonToTrainingArea(l);
 
                 }
                 break;
             case R.id.rbFightingArea:
-                for (Lutemon l : Storage.getInstance().getMovingLutemons()){
-                    Storage.getInstance().getLutemonsInBattleField().remove(l);
-                    Storage.getInstance().addLutemonToBattleField(l);
+                for (Lutemon l : Storage.getInstance().getMovingLutemons()) {
                     Storage.getInstance().getLutemons().remove(l);
                     Storage.getInstance().getLutemonsInTrainingArea().remove(l);
+                    Storage.getInstance().getLutemonsInBattleField().remove(l);
+                    Storage.getInstance().addLutemonToBattleField(l);
                 }
                 break;
             case R.id.rbHome:
-                for (Lutemon l : Storage.getInstance().getMovingLutemons()){
-                    Storage.getInstance().getLutemons().remove(l);
-                    Storage.getInstance().addLutemon(l);
+                for (Lutemon l : Storage.getInstance().getMovingLutemons()) {
                     Storage.getInstance().getLutemonsInTrainingArea().remove(l);
                     Storage.getInstance().getLutemonsInBattleField().remove(l);
+                    Storage.getInstance().getLutemons().remove(l);
+                    Storage.getInstance().addLutemon(l);
                 }
                 break;
         }

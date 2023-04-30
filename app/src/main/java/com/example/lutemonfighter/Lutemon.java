@@ -11,8 +11,6 @@ public class Lutemon implements Serializable {
     protected int experience;
     protected int health;
     protected int maxHealth;
-    protected int id;
-    protected int idCounter;
     protected int wins;
     protected int fights;
     protected int trainingSessions;
@@ -38,7 +36,6 @@ public class Lutemon implements Serializable {
 
     // Getters and setters
 
-    // Attack
     public int getAttack() {
         return attack;
     }
@@ -47,12 +44,10 @@ public class Lutemon implements Serializable {
         this.attack = attack;
     }
 
-    // Defence
     public int getDefence() {
         return defence;
     }
 
-    // Name
     public String getName() {
         return name;
     }
@@ -61,7 +56,6 @@ public class Lutemon implements Serializable {
         this.name = name;
     }
 
-    // Color
     public String getColor() {
         return color;
     }
@@ -70,7 +64,6 @@ public class Lutemon implements Serializable {
         this.color = color;
     }
 
-    // Health
     public int getHealth() {
         return health;
     }
@@ -79,25 +72,10 @@ public class Lutemon implements Serializable {
         this.health = health;
     }
 
-    // Image
     public int getImage() {
         return image;
     }
 
-    public void setImage(int image) {
-        this.image = image;
-    }
-
-    // Id
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    // Wins
     public int getWins() {
         return wins;
     }
@@ -106,7 +84,6 @@ public class Lutemon implements Serializable {
         this.wins = wins;
     }
 
-    // Fights
     public int getFights() {
         return fights;
     }
@@ -115,7 +92,6 @@ public class Lutemon implements Serializable {
         this.fights = fights;
     }
 
-    // Training sessions
     public int getTrainingSessions() {
         return trainingSessions;
     }
@@ -124,7 +100,6 @@ public class Lutemon implements Serializable {
         this.trainingSessions = trainingSessions;
     }
 
-    // Experience
     public int getExperience() {
         return experience;
     }
@@ -133,18 +108,9 @@ public class Lutemon implements Serializable {
         this.experience = experience;
     }
 
-    // Max Health
     public int getMaxHealth() {
         return maxHealth;
     }
 
-    // Number of created lutemons
-    public int getIdCounter() {
-        return idCounter;
-    }
-
-    public void setIdCounter(int idCounter) {
-        this.idCounter = idCounter;
-    }
 
 }
