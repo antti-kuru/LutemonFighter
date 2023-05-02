@@ -1,8 +1,12 @@
 # LutemonFighter
 Olio-ohjelmoinnin harjoitustyö
+
 Antti Kuru, Juho Rekonen
+
 Työn kuvaus
+
 •	Harjoitustyössä käyttäjä pääsee pelaamaan Pokemoneja vastaavilla Lutemoneilla. Lutemoneja on viittä erilaista väriä ja tyyppiä (visuaalinen kuva), joita käyttäjä pystyy halutessaan luomaan. Näitä lutemoneja voi luomisen jälkeen siirtää treenaamaan tai vaihtoehtoisesti taistelemaan. Taistelu tapahtuu vuoropohjaisesti, kuten oikeissakin Pokemon-peleissä, eli vuorotellen toinen hyökkää ja toinen puolustaa. Lutemonien siirtelyn lisäksi niiden tilastoja pääsee tarkastelemaan. Sinne tallentuu esimerkiksi treeni- ja taistelukerrat sekä voitot ja häviöt. Lutemonien tallentaminen tiedostoon ja sieltä niiden lataaminen on myös mahdollista.
+
 
 **Ominaisuudet (pakollisten ominaisuuksien lisäksi)**
 
@@ -41,6 +45,8 @@ Työnjako meni todella hyvin eli työmäärällisesti 50% - 50%.
 •	Taistelu – ja treeninäkymä (Juho)
 
 •	view.xml tiedostot (Juho)
+
+
 
 ****Työnjako (luokat ja toiminnallisuudet)****
 
