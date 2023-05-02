@@ -92,8 +92,6 @@ public class AddLutemonActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 
-        Storage.getInstance().listLutemons();
-
     }
 
 

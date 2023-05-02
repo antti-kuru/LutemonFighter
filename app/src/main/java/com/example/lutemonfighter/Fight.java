@@ -77,6 +77,7 @@ public class Fight {
         attacker.setAttack(attacker.getAttack() + 1);
 
         Storage.getInstance().getMovingLutemons().clear();
+        System.out.println(battleLog);
 
         return battleLog;
     }
