@@ -25,8 +25,8 @@ Eli yhteensä 11 pisteen edestä lisäominaisuuksia.
 
 
 Työnjako meni todella hyvin eli työmäärällisesti 50% - 50%.
-
-Työnjako (aktiviteetit) 
+**
+Työnjako (aktiviteetit) **
 
 •	Visuaalinen ilme näkymiin (Juho)
 
@@ -41,8 +41,8 @@ Työnjako (aktiviteetit)
 •	Taistelu – ja treeninäkymä (Juho)
 
 •	view.xml tiedostot (Juho)
-
-Työnjako (luokat ja toiminnallisuudet)
+**
+Työnjako (luokat ja toiminnallisuudet)**
 
 •	Lutemonien lisäys eli AddLutemonActivity (Antti)
 
