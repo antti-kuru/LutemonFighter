@@ -26,7 +26,7 @@ Eli yhteensä 11 pisteen edestä lisäominaisuuksia.
 
 Työnjako meni todella hyvin eli työmäärällisesti 50% - 50%.
 
-**Työnjako (aktiviteetit) **
+**Työnjako (aktiviteetit)**
 
 •	Visuaalinen ilme näkymiin (Juho)
 
