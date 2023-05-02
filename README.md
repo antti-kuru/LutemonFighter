@@ -42,7 +42,7 @@ Työnjako meni todella hyvin eli työmäärällisesti 50% - 50%.
 
 •	view.xml tiedostot (Juho)
 
-**Työnjako (luokat ja toiminnallisuudet)**
+****Työnjako (luokat ja toiminnallisuudet)****
 
 •	Lutemonien lisäys eli AddLutemonActivity (Antti)
 
