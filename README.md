@@ -76,6 +76,7 @@ Pixel 6 API 30
 Pixel 6 Pro API 30
 
 
+HUOM. Teimme muutoksen viime hetkellä ohjelmaan siirtämällä train() metodin omaan Train-luokkaan. Ennen metodi sijaitsi trainingAreaActivityssä. Yritimme päivittää UML:lää, mutta Umbrellolla vanha kuva on mennyt sekaisin eikä pieni muuokkaus onnistu.
 
 ![image](https://user-images.githubusercontent.com/128390200/235636057-7e6eea15-af65-4575-b4e5-54fa428ab6e1.png)
 
