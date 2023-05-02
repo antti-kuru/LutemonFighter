@@ -25,7 +25,7 @@ public class ListLutemonActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.rvLutemonList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new LutemonListAdapter(getApplicationContext(), lutemonStorage.getLutemons()));
+        recyclerView.setAdapter(new LutemonListAdapter(getApplicationContext(), lutemonStorage.getLutemonsInHome()));
 
         rvTrainingArea = findViewById(R.id.rvLutemonTrainingArea);
         rvTrainingArea.setLayoutManager(new LinearLayoutManager(this));
@@ -48,7 +48,7 @@ public class ListLutemonActivity extends AppCompatActivity {
             the destination chosen by the user */
             case R.id.rbTrainingArea:
                 for (Lutemon l : Storage.getInstance().getMovingLutemons()) {
-                    Storage.getInstance().getLutemons().remove(l);
+                    Storage.getInstance().getLutemonsInHome().remove(l);
                     Storage.getInstance().getLutemonsInBattleField().remove(l);
                     Storage.getInstance().getLutemonsInTrainingArea().remove(l);
                     Storage.getInstance().addLutemonToTrainingArea(l);
@@ -57,7 +57,7 @@ public class ListLutemonActivity extends AppCompatActivity {
                 break;
             case R.id.rbFightingArea:
                 for (Lutemon l : Storage.getInstance().getMovingLutemons()) {
-                    Storage.getInstance().getLutemons().remove(l);
+                    Storage.getInstance().getLutemonsInHome().remove(l);
                     Storage.getInstance().getLutemonsInTrainingArea().remove(l);
                     Storage.getInstance().getLutemonsInBattleField().remove(l);
                     Storage.getInstance().addLutemonToBattleField(l);
@@ -67,7 +67,7 @@ public class ListLutemonActivity extends AppCompatActivity {
                 for (Lutemon l : Storage.getInstance().getMovingLutemons()) {
                     Storage.getInstance().getLutemonsInTrainingArea().remove(l);
                     Storage.getInstance().getLutemonsInBattleField().remove(l);
-                    Storage.getInstance().getLutemons().remove(l);
+                    Storage.getInstance().getLutemonsInHome().remove(l);
                     Storage.getInstance().addLutemon(l);
                 }
                 break;

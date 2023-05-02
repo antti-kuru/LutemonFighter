@@ -20,7 +20,7 @@ public class StatisticsActivity extends AppCompatActivity {
 
         rvHome = findViewById(R.id.rvHomeStats);
         rvHome.setLayoutManager(new LinearLayoutManager(this));
-        rvHome.setAdapter(new StatisticsListAdapter(getApplicationContext(), lutemonStorage.getLutemons()));
+        rvHome.setAdapter(new StatisticsListAdapter(getApplicationContext(), lutemonStorage.getLutemonsInHome()));
 
         rvTraining = findViewById(R.id.rvTrainingStats);
         rvTraining.setLayoutManager(new LinearLayoutManager(this));
