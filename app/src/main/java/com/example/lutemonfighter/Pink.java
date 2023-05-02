@@ -2,7 +2,6 @@ package com.example.lutemonfighter;
 
 public class Pink extends Lutemon {
 
-    // Public constructor for Pink Lutemon
     public Pink(String color, String name, int image) {
         attack = 7;
         defence = 2;

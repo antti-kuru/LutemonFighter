@@ -31,7 +31,7 @@ public class Lutemon implements Serializable {
 
     public int attack() {
         // Here we just return the attack so it's basically a getter
-        return attack;
+        return this.attack;
     }
 
     // Getters and setters
