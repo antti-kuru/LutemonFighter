@@ -10,8 +10,7 @@ import java.util.ArrayList;
 
 public class Storage {
 
-    // Lutemons at home
-    protected ArrayList<Lutemon> lutemons = new ArrayList<>();
+    protected ArrayList<Lutemon> lutemonsInHome = new ArrayList<>();
 
     private ArrayList<Lutemon> lutemonsInTrainingArea = new ArrayList<>();
 
@@ -30,7 +29,7 @@ public class Storage {
 
     // Everytime a lutemon is created it is moved straight to home
     public void addLutemon(Lutemon lutemon) {
-        lutemons.add(lutemon);
+        lutemonsInHome.add(lutemon);
     }
 
     public void addMovingLutemon(Lutemon lutemon) {
@@ -57,15 +56,8 @@ public class Storage {
         return lutemonsInBattleField;
     }
 
-    public ArrayList<Lutemon> getLutemons() {
-        return lutemons;
-    }
-
-    // Printing the stats of the lutemons into the console
-    public void listLutemons() {
-        for (Lutemon l : lutemons) {
-            System.out.println(l.getName() + " " + l.getColor() + " " + l.getAttack() + " " + l.getDefence() + " " + l.getMaxHealth());
-        }
+    public ArrayList<Lutemon> getLutemonsInHome() {
+        return lutemonsInHome;
     }
 
     // For saving lutemons
@@ -74,7 +66,7 @@ public class Storage {
             ObjectOutputStream lutemonInHomeWriter = new ObjectOutputStream(context.openFileOutput("lutemons.data", Context.MODE_PRIVATE));
             ObjectOutputStream lutemonInTrainingAreaWriter = new ObjectOutputStream(context.openFileOutput("lutemonsTrainingArea.data", Context.MODE_PRIVATE));
             ObjectOutputStream lutemonInBattleFieldWriter = new ObjectOutputStream(context.openFileOutput("lutemonsBattleField.data", Context.MODE_PRIVATE));
-            lutemonInHomeWriter.writeObject(lutemons);
+            lutemonInHomeWriter.writeObject(lutemonsInHome);
             lutemonInTrainingAreaWriter.writeObject(lutemonsInTrainingArea);
             lutemonInBattleFieldWriter.writeObject(lutemonsInBattleField);
             lutemonInHomeWriter.close();
@@ -92,7 +84,7 @@ public class Storage {
             ObjectInputStream lutemonInHomeReader = new ObjectInputStream(context.openFileInput("lutemons.data"));
             ObjectInputStream lutemonInTrainingAreaReader = new ObjectInputStream(context.openFileInput("lutemonsTrainingArea.data"));
             ObjectInputStream lutemonInBattleFieldReader = new ObjectInputStream(context.openFileInput("lutemonsBattleField.data"));
-            lutemons = (ArrayList<Lutemon>) lutemonInHomeReader.readObject();
+            lutemonsInHome = (ArrayList<Lutemon>) lutemonInHomeReader.readObject();
             lutemonsInTrainingArea = (ArrayList<Lutemon>) lutemonInTrainingAreaReader.readObject();
             lutemonsInBattleField = (ArrayList<Lutemon>) lutemonInBattleFieldReader.readObject();
             lutemonInHomeReader.close();
