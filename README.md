@@ -5,6 +5,7 @@ Työn kuvaus
 •	Harjoitustyössä käyttäjä pääsee pelaamaan Pokemoneja vastaavilla Lutemoneilla. Lutemoneja on viittä erilaista väriä ja tyyppiä (visuaalinen kuva), joita käyttäjä pystyy halutessaan luomaan. Näitä lutemoneja voi luomisen jälkeen siirtää treenaamaan tai vaihtoehtoisesti taistelemaan. Taistelu tapahtuu vuoropohjaisesti, kuten oikeissakin Pokemon-peleissä, eli vuorotellen toinen hyökkää ja toinen puolustaa. Lutemonien siirtelyn lisäksi niiden tilastoja pääsee tarkastelemaan. Sinne tallentuu esimerkiksi treeni- ja taistelukerrat sekä voitot ja häviöt. Lutemonien tallentaminen tiedostoon ja sieltä niiden lataaminen on myös mahdollista.
 
 **Ominaisuudet (pakollisten ominaisuuksien lisäksi)**
+
 •	Recycleview: Lutemonien listaus useassa eri aktiviteetissa, jokaisessa käytetty RecycleView-komponenttia (3p)
 
 •	Visuaalinen kuva: Lutemoneja luodessa on näille mahdollista valita kuva / avatar, joka näytetään käyttäjälle tilastoja tarkastellessa (2p)
@@ -24,24 +25,41 @@ Eli yhteensä 11 pisteen edestä lisäominaisuuksia.
 
 
 Työnjako meni todella hyvin eli työmäärällisesti 50% - 50%.
-Työnjako (aktiviteetit) 
+
+**Työnjako (aktiviteetit) **
+
 •	Visuaalinen ilme näkymiin (Juho)
+
 •	Lutemonien lisäys (Antti)
+
 •	Päänäkymä / kotinäkymä (Antti)
+
 •	Lutemonien listaus niitä siirtäessä (Antti)
+
 •	Lutemonien listaus tilastoja tarkastellessa (Juho)
+
 •	Taistelu – ja treeninäkymä (Juho)
+
 •	view.xml tiedostot (Juho)
 
-Työnjako (luokat ja toiminnallisuudet)
+**Työnjako (luokat ja toiminnallisuudet)**
+
 •	Lutemonien lisäys eli AddLutemonActivity (Antti)
+
 •	Lutemon luokka sekä siitä periytyvät luokat eri väreille (Antti)
+
 •	MainActivity (Antti)
+
 •	Taistelu + satunnaisuus (Juho)
+
 •	Treenaaminen (Juho)
+
 •	Storage (Antti)
+
 •	Tallennus ja lataaminen (Antti)
+
 •	Lutemonien listaus (Antti)
+
 •	Tilastot (Juho)
 
 
